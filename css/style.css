@@ -1,0 +1,562 @@
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    src: url("../fonts/fa-brands-400.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "ubuntu-italic";
+    src: url("../fonts/ubuntu-italic.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzjvWyNL4U.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzjtGyNL4U.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzjvGyNL4U.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoC1Czjs2yNL4U.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzjvmyNL4U.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzjsGyN.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCs6KVjbNBYlgoKcg72j00.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCs6KVjbNBYlgoKew72j00.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCs6KVjbNBYlgoKcw72j00.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCs6KVjbNBYlgoKfA72j00.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCs6KVjbNBYlgoKcQ72j00.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCs6KVjbNBYlgoKfw72.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvWyNL4U.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvGyNL4U.woff2) format('woff2');
+    unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjs2yNL4U.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+}
+
+/* latin-ext */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvmyNL4U.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://ibe.tlintegration.com/gfonts/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjsGyN.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+body {
+    font-family: "ubuntu-italic", sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.header__container {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.header {
+    background-color: #f9f7f0;
+}
+
+.hero-swiper {
+    overflow-x: hidden;
+}
+
+.header__info {
+    display: flex;
+    padding-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.header__img {
+    width: 122px;
+    height: 190px;
+}
+
+.restaurant {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/restoran.png);
+    background-position: 50% 50%;
+}
+
+.delivery {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/car.png);
+    background-position: 50% 50%;
+}
+
+.header__link {
+    border: 2px solid rgba(126, 67, 99, .302);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+.header__link:hover+.header__hidden {
+    width: 180px;
+    visibility: visible;
+    opacity: 1;
+    margin-right: 20px;
+}
+
+.header__hidden-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #7e4363;
+    transition: 0.9s;
+}
+
+.header__hidden-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.header__link-container {
+    display: flex;
+    align-items: center;
+}
+
+.header__hidden {
+    background-image: url(../img/round_hover.png);
+    width: 0;
+    height: 42px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.header__link:hover {
+    border-color: rgba(126, 67, 99, 1);
+}
+
+.header__links {
+    display: flex;
+    width: 200px;
+    margin-bottom: 8px;
+}
+
+.header__link-btn {
+    font-size: 17px;
+    color: #7e4363;
+    border: none;
+    border-bottom: 1px dashed #7e4363;
+    cursor: pointer;
+    background-color: transparent;
+    text-align: left;
+    padding: 0;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.header__link-btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__social-item {
+    text-align: center;
+    display: block;
+    width: 45px;
+    height: 45px;
+    font-size: 23px;
+    color: #7e4363;
+    border: 2px solid rgba(126, 67, 99, .302);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.header__social-item:hover {
+    border-color: rgba(126, 67, 99, 1);
+}
+
+.fab {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    margin-right: 1.5px;
+}
+
+.header__social {
+    display: flex;
+    gap: 11px;
+}
+
+.header__menu {
+    display: grid;
+    grid-template-columns: 2fr 0fr;
+    padding-bottom: 14px;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav-links {
+    padding: 6px 9px 18px;
+    font-size: 17px;
+    line-height: 1.591;
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 550;
+    color: rgb(86, 77, 77);
+    transition: 0.3s;
+    background-position: center;
+}
+
+.header__nav-links:hover {
+    background: url(../img/menu_active.png) bottom no-repeat, linear-gradient(0deg, #f9f7f0, #f9f7f0 12px, #d7e0e4 0, #d7e0e4);
+}
+
+.header__menu-visible {
+    display: none;
+}
+
+.header__book {
+    background-image: url(../img/tel_bg_new.png);
+    width: 292px;
+    height: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.header__book-tel {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #7e4363;
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.header__book-link {
+    font-size: 15.5px;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    color: #7e4363;
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.wedding {
+    background-image: url(../img/slide_desc1.png);
+    width: 100%;
+    height: 630px;
+}
+
+.venice {
+    background-image: url(../img/slide_desc2.png);
+    width: 100%;
+    height: 630px;
+}
+
+.gym {
+    background-image: url(../img/slide_desc3.png);
+    width: 100%;
+    height: 630px;
+}
+
+.comfort {
+    background-image: url(../img/slide_desc4.png);
+    width: 100%;
+    height: 630px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.swiper-slide__header {
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+    font-family: 'ubuntu', sans-serif;
+    line-height: 1.188;
+    margin-bottom: 8px;
+}
+
+.swiper-slide__text {
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.667;
+    text-align: center;
+    font-family: 'ubuntu', sans-serif;
+}
+
+.stock {
+    background-color: #f8f5ee;
+    padding-top: 200px;
+    padding-bottom: 58px;
+}
+
+.stock__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 50px;
+    margin-bottom: 100px;
+}
+
+.stock__img {
+    margin-bottom: 15px;
+}
+
+.stock__more {
+    font-size: 24px;
+    color: #7e4363;
+    font-family: 'ubuntu', sans-serif;
+    border-bottom: 1px dashed #7e4363;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed;
+}
+
+.stock__more:hover {
+    border: transparent 1px solid;
+}
+
+.stock__show {
+    color: #fff;
+    font-family: 'ubuntu', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    background-color: #7e4363;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.stock__show:hover {
+    background-color: rgba(123, 66, 97, 0.8);
+}
+
+.stock__infvisible {
+    display: none;
+}
+
+.about {
+    padding-top: 60px;
+    background-color: #fffdf8;
+    padding-bottom: 46px;
+}
+
+.about__flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about__header {
+    margin-bottom: 50px;
+    font-weight: 500;
+    color: #564d4d;
+    font-size: 72px;
+    font-style: normal;
+    font-family: 'ubuntu', sans-serif;
+}
+
+.fund {
+    background-color: #f8f5ee;
+    padding: 45px 0 50px;
+}
+
+.fund__header {
+    font-size: 72px;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: 'ubuntu', sans-serif;
+    color: #564d4d;
+}
+
+.fund__text {
+    font-size: 18px;
+    line-height: 1.66;
+    text-align: center;
+    color: #564d4d;
+    font-style: normal;
+    font-family: 'ubuntu', sans-serif;
+    max-width: 800px;
+    margin: auto;
+}
+
+.fund__text:last-child {
+    margin-bottom: 70px;
+}
