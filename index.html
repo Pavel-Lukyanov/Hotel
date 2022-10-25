@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
     <title>Отель Вилла МАРАЛИС</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
@@ -13,6 +14,7 @@
     <link rel="icon" href="./img/favicon.png" type="image/x-icon">
     <script defer src="./js/swiper-bundle.min.js"></script>
     <script defer src="./js/main.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
 </head>
 
 <body>
@@ -91,6 +93,8 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <div class="header__menu-visible__container">
             <div class="header__menu-visible">
                 <nav class="header__nav">
                     <ul class="header__list">
@@ -199,7 +203,8 @@
                     <p class="about__text">
                         Изысканный и комфортный отель Hotel Villa MARALIS расположился в экологически чистом месте
                         Кемеровской области на набережной реки Томь. Создан основателями ресторанного комплекса Лазурный
-                        берег, как продолжение воплощения мечты семьи Симонян в лучших традициях армянского гостеприимства.
+                        берег, как продолжение воплощения мечты семьи Симонян в лучших традициях армянского
+                        гостеприимства.
                         Начиная с первых шагов по территории, во всем что открывается взору чувствуется заботливая рука
                         хозяйки и твердый характер отца.
                     </p>
@@ -236,102 +241,118 @@
                     </p>
                 </div>
                 <div class="fund__cards">
-                    <a href="#" class="fund__item">
-                        <h3 class="fund__item-header">
-                            Luxe
-                        </h3>
-                        <p class="fund__text">
-                            Уникальные номера, исполненные в классическом стиле и индивидуальной цветовой гамме
-                        </p>
-                        <p class="fund__more">
-                            Подробнее
-                        </p>
+                    <a href="#" class="fund__item luxe">
+                        <div class="fund__content">
+                            <h3 class="fund__item-header">
+                                Luxe
+                            </h3>
+                            <p class="fund__text">
+                                Уникальные номера, исполненные в классическом стиле и индивидуальной цветовой гамме
+                            </p>
+                            <p class="fund__more">
+                                Подробнее
+                            </p>
+                        </div>
                     </a>
-                    <a href="#" class="fund__item">
-                        <h3 class="fund__item-header">
-                            Junior suite
-                        </h3>
-                        <p class="fund__text">
-                            Номера категории полулюкс. Каждый номер пронизан романтической историей отраженной в деталях
-                        </p>
-                        <p class="fund__more">
-                            Подробнее
-                        </p>
+                    <a href="#" class="fund__item junior-suite">
+                        <div class="fund__content">
+                            <h3 class="fund__item-header">
+                                Junior suite
+                            </h3>
+                            <p class="fund__text">
+                                Номера категории полулюкс. Каждый номер пронизан романтической историей отраженной в
+                                деталях
+                            </p>
+                            <p class="fund__more">
+                                Подробнее
+                            </p>
+                        </div>
                     </a>
-                    <a href="#" class="fund__item">
-                        <h3 class="fund__item-header">
-                            Luxe Family
-                        </h3>
-                        <p class="fund__text">
-                            Номер категории люкс двухкомнатный рекомендован для семейного проживания с детьми
-                        </p>
-                        <p class="fund__more">
-                            Подробнее
-                        </p>
+                    <a href="#" class="fund__item luxe-family">
+                        <div class="fund__content">
+                            <h3 class="fund__item-header">
+                                Luxe Family
+                            </h3>
+                            <p class="fund__text">
+                                Номер категории люкс двухкомнатный рекомендован для семейного проживания с детьми
+                            </p>
+                            <p class="fund__more">
+                                Подробнее
+                            </p>
+                        </div>
                     </a>
-                    <a href="#" class="fund__item">
-                        <h3 class="fund__item-header">
-                            Comfort
-                        </h3>
-                        <p class="fund__text">
-                            Номера класса комфорт с раздельными и двуспальными кроватями
-                        </p>
-                        <p class="fund__more">
-                            Подробнее
-                        </p>
+                    <a href="#" class="fund__item comfort">
+                        <div class="fund__content">
+                            <h3 class="fund__item-header">
+                                Comfort
+                            </h3>
+                            <p class="fund__text">
+                                Номера класса комфорт с раздельными и двуспальными кроватями
+                            </p>
+                            <p class="fund__more">
+                                Подробнее
+                            </p>
+                        </div>
                     </a>
-                    <a href="#" class="fund__item">
-                        <h3 class="fund__item-header">
-                            Junior Suite Family
-                        </h3>
-                        <p class="fund__text">
-                            Номер категории полулюкс рекомендован для семейного проживания с детьми, оснащен
-                            дополнительным спальным местом
-                        </p>
-                        <p class="fund__more">
-                            Подробнее
-                        </p>
+                    <a href="#" class="fund__item junior-suite-family">
+                        <div class="fund__content">
+                            <h3 class="fund__item-header">
+                                Junior Suite Family
+                            </h3>
+                            <p class="fund__text">
+                                Номер категории полулюкс рекомендован для семейного проживания с детьми, оснащен
+                                дополнительным спальным местом
+                            </p>
+                            <p class="fund__more">
+                                Подробнее
+                            </p>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
-        <section class="breakfast container">
-            <div class="breakfast__description">
-                <h2 class="breakfast__header">
-                    Завтрак в отеле
-                </h2>
-                <h3 class="breakfast__underhead">
-                    Завтрак в Вилла Маралис - это часть культуры, неотъемлемая часть нашего гостеприимства.
-                </h3>
-                <p class="breakfast__text">
-                    Все завтраки разработаны на основе блюд ресторана Лазурный берег, повара которого в течении 14 лет
-                    работают над совершенствованием вкуса и подачи лучших блюд армянской домашней кухни.
-                    Мы разработали пять комплексов от классического английского до кавказского завтрака, что едят
-                    долгожители. Ведь уже давно не секрет, что один из уголков мира, который издавна считается местом
-                    долголетия – это Кавказ. Народная армянская пословица гласит: «Хочешь долго прожить — больше пей
-                    мацуна
-                    (кислого молока)». И эта пословица подтверждена научными данными. В наши завтраки включены такие
-                    блюда
-                    как тан, мацун, наша гордость хачапури по аджарски легкие салаты из свежих овощей с сыром брынза и
-                    многое другое. Рекомендуем на каждый день вашего пребывания в семейном отеле «Вилла Маралис»
-                    пробовать
-                    новый завтрак, а ужинать в нашем ресторане Лазурный берег.
-                </p>
-                <div class="breakfast__btn-container">
-                    <a class="breakfast__btn" href="#">
-                        Меню отеля
-                    </a>
-                    <a class="breakfast__btn" href="#">
-                        Меню минибара
-                    </a>
+        <section class="breakfast">
+            <div class="container breakfast__flex">
+                <div class="breakfast__description">
+                    <h2 class="breakfast__header">
+                        Завтрак в отеле
+                    </h2>
+                    <h3 class="breakfast__underhead">
+                        Завтрак в Вилла Маралис - это часть культуры, неотъемлемая часть нашего гостеприимства.
+                    </h3>
+                    <p class="breakfast__text">
+                        Все завтраки разработаны на основе блюд ресторана Лазурный берег, повара которого в течении 14
+                        лет
+                        работают над совершенствованием вкуса и подачи лучших блюд армянской домашней кухни.
+                        Мы разработали пять комплексов от классического английского до кавказского завтрака, что едят
+                        долгожители. Ведь уже давно не секрет, что один из уголков мира, который издавна считается
+                        местом
+                        долголетия – это Кавказ. Народная армянская пословица гласит: «Хочешь долго прожить — больше пей
+                        мацуна
+                        (кислого молока)». И эта пословица подтверждена научными данными. В наши завтраки включены такие
+                        блюда
+                        как тан, мацун, наша гордость хачапури по аджарски легкие салаты из свежих овощей с сыром брынза
+                        и
+                        многое другое. Рекомендуем на каждый день вашего пребывания в семейном отеле «Вилла Маралис»
+                        пробовать
+                        новый завтрак, а ужинать в нашем ресторане Лазурный берег.
+                    </p>
+                    <div class="breakfast__btn-container">
+                        <a target="_blank" class="breakfast__btn" href="#">
+                            Меню отеля
+                        </a>
+                        <a target="_blank" class="breakfast__btn" href="#">
+                            Меню минибара
+                        </a>
+                    </div>
+                </div>
+                <div class="breakfast__img-container">
+                    <img class="breakfast__img" src="./img/breakfast.png" alt="Завтрак в отеле">
                 </div>
             </div>
-            <div class="breakfast__img">
-                <img src="./img/breakfast.png" alt="Завтрак в отеле">
-            </div>
         </section>
-        <section class="container">
-            <div class="photogalery">
+        <section class="photogalery">
+            <div class="photogalery__container container">
                 <h2 class="photogalery__header">
                     Фотогалерея
                 </h2>
@@ -341,50 +362,50 @@
                 </p>
                 <div class="photogalery__cards-container">
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/10.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/29.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/30.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/404_1.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/comfort.png" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
-                    </div>
-
-                    <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/DSC07307.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/DSC07309.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/DSC07313-1.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/DSC07313-2.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/junior-suite-family.png"
+                            alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./" alt="Фотография отеля">
+                        <img class="photogalery__img" src="./img/gallery/junior-suite.png" alt="Фотография отеля">
                     </div>
-                    <button id="photo-nore" class="photogalery__more">
-                        Загрузить ещё
-                    </button>
+                    <div class="photogalery__card photogalery__invisible">
+                        <img class="photogalery__img" src="./img/gallery/luxe-family.png" alt="Фотография отеля">
+                    </div>
                 </div>
+                <button id="photo-more" class="photogalery__more">
+                    Загрузить ещё
+                </button>
             </div>
         </section>
-        <section class="container">
-            <div class="halls">
+        <section class="halls">
+            <div class="halls__content container">
                 <h2 class="halls__headers">
                     Развлечения и Конференц залы
                 </h2>
@@ -394,34 +415,43 @@
                     отеле есть все необходимое: парковка, трансфер, прокат автомобилей, сейф в номере и у
                     администратора, факс, принтер, и Интернет. Отель предоставляет услуги по организации встреч и
                     банкетов, заказу билетов.
-                </p>
-                <p class="halls__description">
+                    <br><br>
                     И самое главное – при отеле есть собственный ресторанный комплекс с конференц-залами и команда
                     высоко квалифицированных специалистов-организаторов деловых мероприятий.
                 </p>
                 <div class="halls__cards-container">
                     <div class="halls__hall conference-rooms">
-                        <h3 class="halls__cards-header">
-                            Конференц-залы
-                        </h3>
-                        <p class="halls__card-text">
-                            Собственные конференц-залы и команда высоко квалифицированных специалистов-организаторов
-                            деловых мероприятий.
-                        </p>
+                        <div class="halls__hall__content">
+                            <h3 class="halls__cards-header">
+                                Конференц-залы
+                            </h3>
+                            <p class="halls__card-text">
+                                Собственные конференц-залы и команда высоко квалифицированных специалистов-организаторов
+                                деловых мероприятий.
+                            </p>
+                            <a class="halls__link" href="#">
+                                Подробнее
+                            </a>
+                        </div>
                     </div>
-                    <div class="halls__hall conference-rooms">
-                        <h3 class="halls__cards-header">
-                            Ресторан Лазурный Берег
-                        </h3>
-                        <p class="halls__card-text">
-                            Армянская домашняя кухня в лучших традициях гостеприимства.
-                        </p>
+                    <div class="halls__hall hall-restaurant">
+                        <div class="halls__hall__content">
+                            <h3 class="halls__cards-header">
+                                Ресторан Лазурный Берег
+                            </h3>
+                            <p class="halls__card-text">
+                                Армянская домашняя кухня в лучших традициях гостеприимства.
+                            </p>
+                            <a class="halls__link" href="#">
+                                Подробнее
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container">
-            <div class="add-services">
+        <section class="add-services">
+            <div class="container">
                 <h3 class="add-services__header">
                     Дополнительные услуги
                 </h3>
@@ -477,37 +507,43 @@
                 </div>
             </div>
         </section>
-        <section class="container">
-            <h2 class="reviews">
-                Здесь будут отзывы
-            </h2>
+        <section class="reviews">
+            <div class="reviews__content container">
+                <h2 class="reviews__header">
+                    Отзывы
+                </h2>
+                <div>
+                    Здесь будет виджет с отзывами
+                </div>
+            </div>
         </section>
         <section class="location">
-            <h2 class="location__header">
-                Расположение
-            </h2>
-            <div class="location__objects">
-                <button class="location__btn airport">
-                    Аэропорт
-                </button>
-                <button class="location__btn railway-station">
-                    Ж/д вокзал
-                </button>
-                <button class="location__btn bus-station">
-                    Автовокзал
-                </button>
-                <button class="location__btn shopping-centers">
-                    Торговые центры
-                </button>
-                <button class="location__btn entertainment">
-                    Развлечения
-                </button>
-                <button class="location__btn museums-monuments">
-                    Музеи/памятники
-                </button>
+            <div class="location__content">
+                <h2 class="location__header">
+                    Расположение
+                </h2>
+                <div class="location__objects">
+                    <button data-map="airport" class="location__btn airport active">
+                        Аэропорт
+                    </button>
+                    <button data-map="railway-station" class="location__btn railway-station">
+                        Ж/д вокзал
+                    </button>
+                    <button data-map="bus-station" class="location__btn bus-station">
+                        Автовокзал
+                    </button>
+                    <button data-map="shopping-centers" class="location__btn shopping-centers">
+                        Торговые центры
+                    </button>
+                    <button data-map="entertainment" class="location__btn entertainment">
+                        Развлечения
+                    </button>
+                    <button data-map="museums-monuments" class="location__btn museums-monuments">
+                        Музеи/памятники
+                    </button>
+                </div>
             </div>
-            <div class="location__map">
-
+            <div class="map-yandex" id="map">
             </div>
             <button class="location__book">
                 Забронировать
