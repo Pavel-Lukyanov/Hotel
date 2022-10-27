@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="./css/icon.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./img/favicon.png" type="image/x-icon">
-    <script defer src="./js/swiper-bundle.min.js"></script>
+    <script defer src="./libs/swiper-bundle.min.js"></script>
+    <script defer src="./libs/inputmask.min.js"></script>
     <script defer src="./js/main.js"></script>
     <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
         type="text/javascript"></script>
@@ -172,23 +173,23 @@
                 <div class="stock__container">
                     <div class="stock__item stock-right">
                         <img class="stock__img" src="./img/stocks.png" alt="Скидка 5% при регистрации на сайте">
-                        <button data-modal="stock1" class="stock__more">Подробнее</button>
+                        <button data-pointer="stock1" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-bottom">
                         <img class="stock__img" src="./img/birthday.png" alt="Скидка 30% С днем рождения">
-                        <button class="stock__more">Подробнее</button>
+                        <button data-pointer="stock2" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-bottom">
                         <img class="stock__img" src="./img/wedding.png" alt="Тариф свадебный">
-                        <button class="stock__more">Подробнее</button>
+                        <button data-pointer="stock3" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-right">
                         <img class="stock__img" src="./img/bussines.png" alt="Тариф бизнес">
-                        <button class="stock__more">Подробнее</button>
+                        <button data-pointer="stock4" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-bottom stock__infvisible">
                         <img class="stock__img" src="./img/all-their.png" alt="Тариф все свои">
-                        <button class="stock__more">Подробнее</button>
+                        <button data-pointer="stock5" class="stock__more">Подробнее</button>
                     </div>
                 </div>
                 <button id="more-stock" class="stock__show">
@@ -210,7 +211,7 @@
                         Начиная с первых шагов по территории, во всем что открывается взору чувствуется заботливая рука
                         хозяйки и твердый характер отца.
                     </p>
-                    <button class="about__more">
+                    <button data-pointer="aboutHotel" class="about__more">
                         Подробнее
                     </button>
                 </div>
@@ -486,7 +487,7 @@
                         <p class="add-services__item-description">
                             Организация спортивных туров для души
                         </p>
-                        <button class="add-services__call-form">
+                        <button data-pointer="services" class="add-services__call-form">
                             Заказать
                         </button>
                     </div>
@@ -497,7 +498,7 @@
                         <p class="add-services__item-description">
                             Большой выбор экологических экскурсий и туров
                         </p>
-                        <button class="add-services__call-form">
+                        <button data-pointer="services" class="add-services__call-form">
                             Заказать
                         </button>
                     </div>
@@ -508,7 +509,7 @@
                         <p class="add-services__item-description">
                             Прокат и аренда автомобилей в Кемерово
                         </p>
-                        <button class="add-services__call-form">
+                        <button data-pointer="services" class="add-services__call-form">
                             Заказать
                         </button>
                     </div>
@@ -519,7 +520,7 @@
                         <p class="add-services__item-description">
                             Трансфер в аэропорт Кемерово
                         </p>
-                        <button class="add-services__call-form">
+                        <button data-pointer="services" class="add-services__call-form">
                             Заказать
                         </button>
                     </div>
@@ -697,18 +698,259 @@
             </div>
         </footer>
     </main>
-    <div id="stock1" class="popup__container">
-        <div class="popup__content">
-            <div class="popup__description">
-                <p class="pupup__text">
-                    Дорогой гость, спешим сообщить Вам, что при регистрации на официальном сайте нашего отеля, для Вас действует дополнительная скидка 5%
-                </p>
-                <a class="pupup__btn" href="#">
-                    Забронировать
-                </a>
+    <div id="stock1" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <div class="popup__description">
+                    <p class="pupup__text">
+                        Дорогой гость, спешим сообщить Вам, что при регистрации на официальном сайте нашего отеля, для
+                        Вас действует дополнительная скидка 5%
+                    </p>
+                    <a class="pupup__btn" href="#">
+                        Забронировать
+                    </a>
+                </div>
+                <img class="popup__img" src="./img/stocks.png" alt="Скидка 5%">
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
             </div>
-            <img class="popup__img" src="./img/stocks.png" alt="Скидка 5%">
-            <button type="button" data-fancybox-close="" class="popup__close" title="Close"><svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24"><path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path></svg></button>
+        </div>
+    </div>
+    <div id="stock2" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <div class="popup__description">
+                    <p class="pupup__text">
+                        С Днем Рождения!<br>
+                        Дорогие гости, к Вашему Дню Рождения отель Villa MARALIS 4* подготовил приятный подарок:<br>
+                        - Весь 2022 год на номера категории LUXE и Junior Suite действует скидка 30%*<br>
+                        - Комплиментарно от отеля бутылочка белого игристого <br>
+                        <br>
+                        <br>
+                        <br>
+                        *<br>
+                        1. Скидка предоставляется от основного тарифа.<br>
+                        2. Скидка действует 3 дня до и 3 дня после Дня Рождения.<br>
+                        3. Скидка действует при бронировании номера от стойки RECEPTION и по телефону
+                        +7-3842-772-777<br>
+                        4. Скидка не суммируется с постоянными скидками и акциями.<br>
+                    </p>
+                    <a class="pupup__btn" href="#">
+                        Забронировать
+                    </a>
+                </div>
+                <img class="popup__img" src="./img/birthday.png" alt="Скидка 5%">
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="stock3" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <div class="popup__description">
+                    <p class="pupup__text">
+                        Любимому человеку всегда хочешь подарить что-то необыкновенное, что может принести счастье и
+                        рассказать о чувствах. Одним из лучших воспоминаний жизни может стать время, проведенное вдвоем,
+                        когда Вы впервые признаетесь в Любви или еще раз произнесете самые важные слова своему самому
+                        дорогому человеку. В отеле Вилла Маралис представлены просторные номера Luxe и Junior Suite, где
+                        молодожены смогут наслаждаться обществом друг друга.<br>
+                        <br>
+                        Специальный тариф* «Свадебный LUXE» <br>
+                        <br>
+                        ночь в роскошном номере - Luxe со скидкой 25%;<br>
+                        комплимент от отеля в день заезда;<br>
+                        завтрак в номер по Вашему желанию;<br>
+                        ранний заезд или поздний выезд;<br>
+                        <br>
+                        <br>
+                        *Скидка не распространяется на бронирование номеров через компанию-посредника;<br>
+                        Скидки не суммируются и не распространяются на специальные ценовые предложения;<br>
+                        Бронирование по тарифу производится только от стойки администратора на reseption;<br>
+                        100% предоплата;<br>
+                        <br>
+                        <br>
+                        Предложение действительно до 31.12.2022 при предъявлении свидетельства о регистрации брака,
+                        выданного в тот же день, на который сделано бронирование номера/номеров.<br>
+                        <br>
+                        <br>
+                        <br>
+                        Специальный тариф* «Свадебный» включает:<br>
+                        <br>
+                        <br>
+                        Ночь в роскошном номере категории полулюкс с балконом и видом на реку Томь со скидкой 25%;<br>
+                        Комплимент от отеля в день заезда;<br>
+                        Ранний заезд или поздний выезд;<br>
+                        <br>
+                        <br>
+                        *Скидка не распространяется на бронирование номеров через компанию-посредника;<br>
+                        Скидки не суммируются и не распространяются на специальные ценовые предложения;<br>
+                        Бронирование по тарифу производится только от стойки администратора на reseption;<br>
+                        100% предоплата;<br>
+                        <br>
+                        <br>
+                        Предложение действительно до 31.12.2022 при предъявлении свидетельства о регистрации брака,
+                        выданного в тот же день, на который сделано бронирование номера/номеров.
+                    </p>
+                    <a class="pupup__btn" href="#">
+                        Забронировать
+                    </a>
+                </div>
+                <img class="popup__img" src="./img/wedding.png" alt="Скидка 5%">
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="stock4" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <div class="popup__description">
+                    <p class="pupup__text">
+                        "Бизнес тариф" для тех, кто планирует деловые поездки в Кемерово!<br>
+                        В стоимость включены:<br>
+                        <br>
+                        Завтрак на выбор;<br>
+                        Дополнительный завтрак при раннем заезде (в день заселения);<br>
+                        Обед или ужин по меню в комплектации салат, горячее, десерт, напиток;<br>
+                        Охраняемая закрытая парковка;<br>
+                        Услуга "Будильник";<br>
+                        Услуга "Заказ такси";<br>
+                        Разовое пользование услуги прачечной;<br>
+                        Wi Fi на всей территории отеля;<br>
+                        Косметический набор и постельные принадлежности;<br>
+                        Ранний заезд с 06.00*;<br>
+                        Бизнес-услуги: печать, ксерокопия, сканирование;<br>
+                        Закрывающие документы.<br>
+                        Бронирование по тарифу производится: от стойки администратора на Reception, по телефону; 100%
+                        предоплата<br>
+                        <br>
+                        *Ранний заезд с 6.00 утра предоставляется только при наличии свободных номеров готовых к заезду.
+                    </p>
+                    <a class="pupup__btn" href="#">
+                        Забронировать
+                    </a>
+                </div>
+                <img class="popup__img" src="./img/bussines.png" alt="Скидка 5%">
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="stock5" class="popup">
+        <div class="popup__container">
+            <div class="popup__content">
+                <div class="popup__description">
+                    <p class="pupup__text">
+                        Ресторан "Лазурный берег" на протяжении многих лет радует гостей блюдами домашней армянской
+                        кухни, гостеприимством и радушием.<br>
+                        Со многими мы стали добрыми друзьями, как говорится стали "СВОИМИ".<br>
+                        Так вот, для всех своих открыта скидка 500 рублей* на бронирование номеров в отеле "Villa
+                        Maralis".<br>
+                        <br>
+                        * акция действует при предъявлении чека из ресторана "Лазурный берег" на сумму не менее 5000
+                        рублей и датой гашения чека соответствующей дате бронирования номера в отеле "Villa Maralis"<br>
+                    </p>
+                    <a class="pupup__btn" href="#">
+                        Забронировать
+                    </a>
+                </div>
+                <img class="popup__img" src="./img/all-their.png" alt="Скидка 5%">
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="aboutHotel" class="popup">
+        <div class="popup__container">
+            <div class="popup__content popup__noflex">
+                <p class="popup__paragraf">
+                    <strong>Hotel Villa MARALIS</strong> предлагает для своих постояльцев 25 номеров разной
+                    категории, которые оформлены в соответствии с мировыми стандартами и оборудованы всем
+                    необходимым для проживания:
+                </p>
+                <ul class="popup__list">
+                    <li>Круглосуточное обслуживание в номерах;</li>
+                    <li>Регулярно пополняемый персональный мини-бар;</li>
+                    <li>Предметы гостеприимства;</li>
+                    <li>Гладильные принадлежности;</li>
+                    <li>Набор для приготовления чая и кофе;</li>
+                    <li>Плазменный телевизор с цифровым телевидением;</li>
+                    <li>Телефон;</li>
+                    <li>Сейф в номере;</li>
+                    <li>Wi-fi доступ в Интернет;</li>
+                    <li>Завтрак в ресторане Лазурный Берег</li>
+                    <li>Спортивный зал</li>
+                    <li>Зал “Венеция”</li>
+                </ul>
+                <p class="popup__paragraf">Предусмотрены номера для людей с ограниченными физическими возможностями.</p>
+                <p class="popup__paragraf">В холле <strong>Hotel Villa MARALIS</strong> гостей принимает лобби бар с
+                    профессиональным
+                    бариста, а на минус первом этаже действует фитнес зал, кафе с изысканным меню и переговорная
+                    комната для бизнес встреч. Территория усажена декоративными многолетниками и облагорожена
+                    брусчаткой и стриженным ковром зеленого газона.</p>
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="services" class="popup">
+        <div class="popup__container">
+            <div class="popup__content popup__form-container">
+                <h3 class="popup__header">
+                    Заказать услугу
+                </h3>
+                <p class="popup__text">
+                    Заполните форму и мы свяжемся с вами в ближайшее время
+                </p>
+                <form autocomplete="off" class="popup__form">
+                    <label class="popup__label" for="name">
+                        Представьтесь*
+                        <input data-rule="text" id="name" type="text" name="name" placeholder="Укажите ваше имя">
+                    </label>
+                    <label class="popup__label" for="tel">
+                        Ваш телефон*
+                        <input data-rule="tel" id="tel" type="tel" name="tel">
+                    </label>
+                    <label class="popup__label" for="count">
+                        Кол-во человек*
+                        <input data-rule="number" id="count" type="number" name="count">
+                    </label>
+                    <div class="popup__agree">
+                        <input data-rule="checkbox" class="popup__agree__input" required name="genre" id="agree" type="checkbox">
+                        <span class="form__agree__span"></span>
+                        <label class="form__agree__label" for="agree">
+                            Согласие на обработку персональных данных
+                        </label>
+                    </div>
+                    <button id="submit" disabled type="submit" class="popup__submit">
+                        Отправить заявку
+                    </button>
+                    <button type="button" class="popup__close" title="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                            <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </body>

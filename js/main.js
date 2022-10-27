@@ -82,32 +82,116 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 
-    //Модалки акции
+    //Валидация формы
+    let form = document.querySelector('.popup__form');
+    let inputs = form.querySelectorAll('input');
+    let submitBtn = document.getElementById('submit');
+    let ch1 = false;
+    let ch2 = false;
+    let ch3 = false;
+    let ch4 = false;
 
-    let stockBtns = document.querySelectorAll('.stock__more');
-    stockBtns.forEach(el => {
-        el.addEventListener('click', function () {
-            let modal = document.getElementById(el.dataset.modal);
-            modal.classList.add('popup__opened');
+    inputs.forEach(el => {
+        el.addEventListener('input', function () {
+            let rule = el.dataset.rule;
+            switch (rule) {
+                case 'text':
+                    if (el.value.length >= 2) {
+                        ch1 = true;
+                    } else {
+                        ch1 = false;
+                    }
+                    break;
+                case 'tel':
+                    if (!el.value.includes('_')) {
+                        ch2 = true;
+                    } else {
+                        ch2 = false;
+                    }
+                    break;
+                case 'number':
+                    if (!el.value == '') {
+                        ch3 = true;
+                    } else {
+                        ch3 = false;
+                    }
+                    break;
+                case 'checkbox':
+                    if (el.checked) {
+                        ch4 = true;
+                    } else {
+                        ch4 = false;
+                    }
+                    break;
+            }
+            if (ch1 && ch2 && ch3 && ch4) {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
         })
     })
 
-    let modalCloses = document.querySelectorAll('.popup__close');
-    modalCloses.forEach(el => {
-        el.addEventListener('click', function () {
-            el.parentNode.parentNode.classList.remove('popup__opened');
-        })
-    })
+    //Маска телефона
+    var selector = document.querySelector("input[type='tel']");
+    var im = new Inputmask("+7 (999)-999-99-99");
 
-    window.addEventListener('click', e => { // при клике в любом месте окна браузера
-        const target = e.target // находим элемент, на котором был клик
-        if (!target.closest('popup__container')) { // если этот элемент или его родительские элементы не окно навигации и не кнопка
-            stockBtns.forEach(el => {
-                el.classList.remove('popup__opened');
-                console.log('asd')
-            })
+    im.mask(selector);
+
+    function hasInvalidInput(elements) {
+        return elements.some((element) => !element.validity.valid);
+    }
+
+
+    // Popups
+    class Popup {
+        constructor(popupElement) {
+            this._popupElement = popupElement;
+            this._closeButton = this._popupElement.querySelector('.popup__close');
+            this._img = this._popupElement.id === "photo" ? this._popupElement.querySelector('.popup__img') : null;
+            this._handleEscClose = this._handleEscClose.bind(this)
+            this._openingLinks = document.querySelectorAll(`[data-pointer="${this._popupElement.id}"]`)
+            this.setEventListeners()
         }
-    })
+
+        open(el) {
+            if (this._img) this._img.src = el.src
+            document.body.style.overflow = "hidden";
+            this._popupElement.classList.add('popup_opened')
+            document.addEventListener('keydown', this._handleEscClose);
+        }
+
+        close() {
+            if (this._img) this._img.src = ""
+            this._popupElement.classList.remove('popup_opened');
+            document.body.style.overflow = "visible";
+            document.removeEventListener('keydown', this._handleEscClose);
+        }
+
+        _handleEscClose(evt) {
+            if (evt.keyCode === 27) {
+                this.close();
+            }
+        }
+
+        _handleOverlayClick(evt) {
+            if (evt.target === evt.currentTarget) {
+                this.close();
+            }
+        }
+
+        setEventListeners() {
+            this._openingLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); this.open(e.target) }))
+            this._closeButton.addEventListener('click', () => this.close());
+            this._popupElement.addEventListener('click', this._handleOverlayClick.bind(this));
+        }
+    }
+
+    const popups = document.querySelectorAll('.popup')
+    let popupsObj = {}
+    if (popups.length > 0) popups.forEach(item => { popupsObj[item.id] = new Popup(item) })
+
+
 
 
     //Анимация 
