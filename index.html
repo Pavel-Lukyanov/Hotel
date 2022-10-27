@@ -53,7 +53,33 @@
                     </div>
                 </div>
                 <div class="header__logo">
+                    <button id="menuBtn" class="menu-btn nav-toggle" aria-label="Меню">
+                        <span class="bar-top"></span>
+                        <span class="bar-mid"></span>
+                        <span class="bar-bot"></span>
+                    </button>
                     <img class="header__img" src="./img/logo.svg" alt="Логотип">
+                    <div id="menuContainer" class="menu__container">
+                        <nav class="menu__nav">
+                            <ul>
+                                <li>
+                                    <a href="#hotel">Отель</a>
+                                </li>
+                                <li>
+                                    <a href="#fund">Номерной фонд</a>
+                                </li>
+                                <li>
+                                    <a href="#booking">Бронирование</a>
+                                </li>
+                                <li>
+                                    <a href="#bussines">Для бизнеса</a>
+                                </li>
+                                <li>
+                                    <a href="#contacts">Контакты</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
                 <div class="header__social">
                     <a class="header__social-item" href="#">
@@ -119,6 +145,32 @@
                     </li>
                 </ul>
             </nav>
+            <button id="menuBtn" class="menu-btn nav-toggle" aria-label="Меню">
+                <span class="bar-top"></span>
+                <span class="bar-mid"></span>
+                <span class="bar-bot"></span>
+            </button>
+            <!-- <div id="menuContainer" class="menu__container__fix">
+                <nav class="menu__nav">
+                    <ul>
+                        <li>
+                            <a href="#hotel">Отель</a>
+                        </li>
+                        <li>
+                            <a href="#fund">Номерной фонд</a>
+                        </li>
+                        <li>
+                            <a href="#booking">Бронирование</a>
+                        </li>
+                        <li>
+                            <a href="#bussines">Для бизнеса</a>
+                        </li>
+                        <li>
+                            <a href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> -->
             <div class="header__book">
                 <a class="header__book__tel" href="tel:+73842772-777">
                     8 (3842) 772-777
@@ -133,7 +185,7 @@
         <section class="hero">
             <div class="hero-swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide wedding-main">
+                    <div class="swiper-slide swiper-hero wedding-main">
                         <h2 class="swiper-slide__header">
                             Свадебный тариф
                         </h2>
@@ -141,7 +193,7 @@
                             для счастья молодых
                         </p>
                     </div>
-                    <div class="swiper-slide venice-main">
+                    <div class="swiper-slide swiper-hero venice-main">
                         <h2 class="swiper-slide__header">
                             Зал "Венеция"
                         </h2>
@@ -149,7 +201,7 @@
                             ужины и деловые встречи
                         </p>
                     </div>
-                    <div class="swiper-slide gym-main">
+                    <div class="swiper-slide swiper-hero gym-main">
                         <h2 class="swiper-slide__header">
                             Спорт зал
                         </h2>
@@ -157,7 +209,7 @@
                             для гостей отеля
                         </p>
                     </div>
-                    <div class="swiper-slide comfort-main">
+                    <div class="swiper-slide swiper-hero comfort-main">
                         <h2 class="swiper-slide__header">
                             Кофморт и изысканность
                         </h2>
@@ -220,16 +272,16 @@
                         <div class="swiper-wrapper">
                             <div class="about-swiper">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide swiper-about">
                                         <img src="./img/about1.jpg" alt="Фото отеля">
                                     </div>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide swiper-about">
                                         <img src="./img/about2.jpg" alt="Фото отеля">
                                     </div>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide swiper-about">
                                         <img src="./img/about3.jpg" alt="Фото отеля">
                                     </div>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide swiper-about">
                                         <img src="./img/about4.jpg" alt="Фото отеля">
                                     </div>
                                 </div>
@@ -371,7 +423,7 @@
                 </div>
             </div>
         </section>
-        <section class="photogalery">
+        <!-- <section class="photogalery">
             <div class="photogalery__container container">
                 <h2 class="photogalery__header">
                     Фотогалерея
@@ -423,8 +475,8 @@
                     Загрузить ещё
                 </button>
             </div>
-        </section>
-        <section id="business" class="halls">
+        </section> -->
+        <!-- <section id="business" class="halls">
             <div class="halls__content container">
                 <h2 class="halls__headers">
                     Развлечения и Конференц залы
@@ -469,8 +521,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="add-services">
+        </section> -->
+        <!-- <section class="add-services">
             <div class="container">
                 <h3 class="add-services__header">
                     Дополнительные услуги
@@ -526,8 +578,8 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="reviews">
+        </section> -->
+        <!-- <section class="reviews">
             <div class="reviews__content container">
                 <h2 class="reviews__header">
                     Отзывы
@@ -536,8 +588,8 @@
                     Здесь будет виджет с отзывами
                 </div>
             </div>
-        </section>
-        <section id="contacts" class="location">
+        </section> -->
+        <!-- <section id="contacts" class="location">
             <div class="location__content">
                 <h2 class="location__header">
                     Расположение
@@ -568,8 +620,8 @@
             <button class="location__book">
                 Забронировать
             </button>
-        </section>
-        <footer class="footer">
+        </section> -->
+        <!-- <footer class="footer">
             <div class="container">
                 <div class="footer__info">
                     <nav class="footer__nav">
@@ -696,9 +748,9 @@
                     © 2019, Отель "Вилла Маралис" ИП Симонян А.В.
                 </div>
             </div>
-        </footer>
+        </footer> -->
     </main>
-    <div id="stock1" class="popup">
+    <!-- <div id="stock1" class="popup">
         <div class="popup__container">
             <div class="popup__content">
                 <div class="popup__description">
@@ -953,6 +1005,18 @@
             </div>
         </div>
     </div>
+    <div id="photos" class="popup">
+        <div class="popup__container">
+            <div class="popup__content popup__photo">
+                <img class="popup__img" id="photoSize" src="" alt="Фотография отеля">
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>

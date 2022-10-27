@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //Галерея загрузить еще
-    let photoMore = document.getElementById('photo-more');
+    /* let photoMore = document.getElementById('photo-more');
     photoMore.addEventListener('click', function () {
         let invisibles = document.querySelectorAll('.photogalery__invisible');
         invisibles.forEach(invisible => {
@@ -35,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             photoMore.textContent = 'Загрузить ещё'
         }
-    })
+    }) */
 
 
     //Карта
-    var myMap;
+    /* var myMap;
     // Дождёмся загрузки API и готовности DOM.
     ymaps.ready(init);
 
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, {
             searchControlProvider: 'yandex#search'
         });
-    }
+    } */
 
     //Фиксированная шапка
     let fixedHeader = document.getElementById('fixedHeader');
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //Валидация формы
-    let form = document.querySelector('.popup__form');
+    /* let form = document.querySelector('.popup__form');
     let inputs = form.querySelectorAll('input');
     let submitBtn = document.getElementById('submit');
     let ch1 = false;
@@ -130,17 +130,40 @@ document.addEventListener('DOMContentLoaded', function () {
                 submitBtn.disabled = true;
             }
         })
-    })
+    }) */
+
+
+    //Бургер меню
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menuContainer');
+
+    btn.addEventListener('click', showMenu);
+
+    function showMenu() {
+        menu.classList.toggle('menu-show');
+        this.classList.toggle('opened');
+    }
+
+
+
+    //Фото галерея
+    /* let photos = document.querySelectorAll('.photogalery__card');
+    let modalPhoto = document.getElementById('photos');
+    let modalImg = document.getElementById('photoSize');
+    photos.forEach(photo => {
+        photo.addEventListener('click', function () {
+            let img = photo.querySelector('img');
+            modalImg.src = img.src;
+            modalPhoto.classList.add('popup_opened');
+        })
+    }) */
+
 
     //Маска телефона
-    var selector = document.querySelector("input[type='tel']");
+    /* var selector = document.querySelector("input[type='tel']");
     var im = new Inputmask("+7 (999)-999-99-99");
 
-    im.mask(selector);
-
-    function hasInvalidInput(elements) {
-        return elements.some((element) => !element.validity.valid);
-    }
+    im.mask(selector); */
 
 
     // Popups
