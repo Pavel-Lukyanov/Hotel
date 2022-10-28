@@ -1084,6 +1084,7 @@ body {
     position: relative;
     transition: 0.3s;
     min-height: 160px;
+    max-width: 555px;
 }
 
 .halls__hall::after {
@@ -1241,6 +1242,8 @@ body {
     padding-bottom: 40px;
     max-width: 1160px;
     margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .location__header {
@@ -1276,6 +1279,7 @@ body {
     align-items: center;
     gap: 13px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .airport::before {
@@ -1360,6 +1364,12 @@ body {
     line-height: 1.2;
     display: block;
     margin: auto;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.location__book:hover {
+    opacity: 0.8;
 }
 
 .footer__info {
@@ -1476,7 +1486,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    padding: 10px 0px;
+    padding: 10px 30px;
     background-color: #f0ede6;
 }
 
@@ -1709,6 +1719,15 @@ body {
     margin-bottom: 50px;
 }
 
+.pupup__text::-webkit-scrollbar-thumb {
+    background-color: #7e4363;
+  }
+
+.pupup__text::-webkit-scrollbar {
+    width: 7px;
+    background-color: #dadadd;
+}
+
 .pupup__btn {
     display: inline-block;
     padding: 15px 30px;
@@ -1914,15 +1933,17 @@ body {
 
 .popup__photo {
     display: block;
-    width: 80vw;
-    height: 80vh;
+    max-width: 80vw;
+    max-height: 80vh;
     max-width: 1400px;
     margin: auto;
+    background-color: transparent;
 }
 
 .popup__img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 /* Кнопка бургера */
@@ -2013,13 +2034,73 @@ body {
     font-weight: 600;
 }
 
+@media(max-width: 1400px) {
+
+    .breakfast {
+        background-position: 82% 0%;
+    }
+}
+
 @media(max-width: 1300px) {
     .swiper-slide__header {
         font-size: 62px;
     }
 }
 
+@media(max-width: 1200px) {
+    .add-services__items-container {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+@media(max-width: 1100px) {
+    .halls__hall {
+        min-height: 200px;
+    }
+}
+
 @media(max-width: 1024px) {
+
+    .footer__copyright-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .location__content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .halls__hall {
+        max-width: 100%;
+    }
+
+    .halls__cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photogalery__card {
+        height: 250px;
+    }
+
+    .breakfast__flex {
+        grid-template-columns: 1fr;
+        gap: 300px;
+    }
+
+    .breakfast {
+        background-image: url(../img/vagetables_mobile.png);
+        background-position: 42% 61%;
+        padding-bottom: 0;
+    }
+
+    .breakfast__img {
+        position: static;
+        display: block;
+        margin: auto;
+    }
 
     .about__swiper {
         position: static;
@@ -2140,9 +2221,42 @@ body {
     .about__more {
         margin-left: 0;
     }
+
+    .popup__description {
+        padding: 30px;
+    }
+}
+
+@media(max-width:900px) {
+    .footer__info {
+        flex-direction: column;
+        margin-bottom: 30px;
+        gap: 30px;
+    }
+
+    .popup__content {
+        grid-template-columns: 1fr;
+    }
+
+    .popup__container {
+        overflow-y: auto;
+        max-height: 80vh;
+    }
 }
 
 @media(max-width: 768px) {
+
+    .location__objects {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .breakfast__img {
+        width: 100%;
+    }
+
+    .photogalery__cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
 
     .fund__cards {
         grid-template-columns: 1fr;
@@ -2161,7 +2275,107 @@ body {
     }
 }
 
+@media(max-width: 660px) {
+    .breakfast {
+        background-position: 42% 71%;
+    }
+}
+
+@media(max-width: 600px) {
+    .add-services__items-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__socials {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 550px) {
+    .breakfast {
+        background-position: 42% 76%;
+    }
+
+    .breakfast__underhead {
+        margin-left: 0;
+    }
+
+    .breakfast__text {
+        margin-left: 0;
+    }
+
+    .breakfast__btn-container {
+        margin: auto;
+    }
+
+    .photogalery__card {
+        height: 190px;
+    }
+}
+
 @media(max-width: 500px) {
+
+    .popup__header {
+        font-size: 31px;
+    }
+
+    .popup__text {
+        font-size: 16px;
+    }
+
+    .popup__submit {
+        width: 100%;
+    }
+
+    .popup__form-container {
+        padding: 30px 25px 40px;
+    }
+
+    .location__header {
+        font-size: 31px;
+    }
+
+    .location__objects {
+        grid-template-columns: 1fr;
+    }
+
+    .add-services__header {
+        font-size: 31px;
+    }
+
+    .reviews__header {
+        font-size: 31px;
+    }
+
+    .add-services__text {
+        font-size: 16px;
+    }
+
+    .halls__cards-header {
+        font-size: 31px;
+    }
+
+    .halls__card-text {
+        font-size: 16px;
+    }
+
+    .halls__hall__content {
+        padding: 0 30px;
+    }
+
+    .photogalery__card {
+        height: 160px;
+    }
+
+    .breakfast__header {
+        font-size: 31px;
+        text-align: center;
+    }
+
+    .breakfast {
+        background-position: 30% 80%;
+        background-size: 90%;
+    }
 
     .about__header {
         font-size: 31px;
@@ -2252,9 +2466,33 @@ body {
         font-size: 16px;
         text-align: start;
     }
+
+    .breakfast__text {
+        font-size: 16px;
+    }
+
+    .photogalery__header {
+        font-size: 31px;
+    }
+
+    .photogalery__description {
+        font-size: 16px;
+    }
+
+    .halls__headers {
+        font-size: 31px;
+    }
+
+    .halls__description {
+        font-size: 16px;
+    }
 }
 
 @media(max-width: 425px) {
+
+    .photogalery__card {
+        height: 125px;
+    }
 
     .swiper-hero {
         height: 400px;
@@ -2266,5 +2504,33 @@ body {
 
     .swiper-slide__text {
         font-size: 14px;
+    }
+
+    .breakfast__btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .breakfast__btn {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .breakfast__flex {
+        gap: 220px;
+    }
+
+    .breakfast {
+        background-position: 30% 83%;
+    }
+}
+
+@media(max-width: 360px) {
+    .breakfast {
+        background-position: 30% 87%;
+    }
+
+    .halls__hall {
+        min-height: 280px;
     }
 }
