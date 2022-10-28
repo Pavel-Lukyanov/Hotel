@@ -313,7 +313,7 @@ body {
     padding: 6px 9px 18px;
     font-size: 17px;
     line-height: 1.591;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 550;
     color: rgb(86, 77, 77);
     transition: 0.3s;
@@ -360,7 +360,7 @@ body {
     font-size: 20px;
     line-height: 1.2;
     color: #7e4363;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 600;
     font-style: italic;
 }
@@ -374,7 +374,7 @@ body {
     border-bottom: 1px dashed;
     cursor: pointer;
     color: #7e4363;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     font-style: italic;
 }
@@ -394,7 +394,7 @@ body {
     font-size: 20px;
     line-height: 1.2;
     color: #7e4363;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 600;
     font-style: italic;
 }
@@ -404,7 +404,7 @@ body {
     border-bottom: 1px dashed;
     cursor: pointer;
     color: #7e4363;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 500;
     font-style: italic;
 }
@@ -447,7 +447,7 @@ body {
 .swiper-slide__header {
     font-size: 80px;
     color: rgb(255, 255, 255);
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     line-height: 1.188;
     margin-bottom: 8px;
 }
@@ -457,7 +457,7 @@ body {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.667;
     text-align: center;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .stock {
@@ -500,7 +500,7 @@ body {
 
 .stock__show {
     color: #fff;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 18px;
     font-style: italic;
     background-color: #7e4363;
@@ -626,7 +626,7 @@ body {
     text-align: center;
     color: #564d4d;
     font-style: normal;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     max-width: 800px;
     margin: auto;
 }
@@ -1000,7 +1000,7 @@ body {
     font-size: 36px;
     color: #7e4363;
     line-height: 1;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     margin-bottom: 20px;
     text-align: center;
     transition: 0.3s;
@@ -1008,7 +1008,7 @@ body {
 
 .halls__card-text {
     font-size: 18px;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     color: rgba(86, 77, 77, 0.5);
     line-height: 30px;
     text-align: center;
@@ -1065,7 +1065,7 @@ body {
 
 .halls__link {
     color: #fff;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     border-bottom: 1px dashed #fff;
     font-size: 18px;
     line-height: 1;
@@ -1272,7 +1272,7 @@ body {
     background-color: transparent;
     border: none;
     text-align: start;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 21px;
     color: #564d4d;
     display: flex;
@@ -1393,7 +1393,7 @@ body {
     font-size: 17px;
     color: rgb(86, 77, 77);
     line-height: 1.591;
-    font-family: 'ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 600;
 }
 
@@ -1661,6 +1661,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    z-index: 1;
 }
 
 .popup__close:hover {
@@ -1721,7 +1722,7 @@ body {
 
 .pupup__text::-webkit-scrollbar-thumb {
     background-color: #7e4363;
-  }
+}
 
 .pupup__text::-webkit-scrollbar {
     width: 7px;
@@ -1946,6 +1947,34 @@ body {
     object-fit: contain;
 }
 
+.popup__fund-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.popup__description-container {
+    width: 100%;
+}
+
+.fund__category {
+    padding: 60px 40px 60px 130px;
+    background: #f9fafb;
+}
+
+.popup__info-detail {
+    padding: 50px 30px;
+}
+
+.popup__funds {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup__fund {
+    height: fit-content;
+    padding: 6px;
+}
+
 /* Кнопка бургера */
 
 .nav-toggle {
@@ -2030,8 +2059,207 @@ body {
     font-size: 17px;
     color: rgb(86, 77, 77);
     line-height: 1.591;
-    font-family: "ubunty", sans-serif;
+    font-family: "ubuntu", sans-serif;
     font-weight: 600;
+}
+
+.fund-swiper {
+    max-width: 683px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.popup__fund-header {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 36px;
+    color: rgb(86, 77, 77);
+    margin-bottom: 40px;
+    line-height: 1.333;
+}
+
+.popup__tab {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.popup__fund-name {
+    text-align: start;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: rgb(86, 77, 77);
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 600;
+}
+
+.popup__price-btn {
+    font-size: 16px;
+    color: rgb(86, 77, 77);
+    font-family: 'ubuntu', sans-serif;
+    font-weight: 400;
+}
+
+.popup__catalog-img {
+    border: 4px solid #cecfd1;
+}
+
+.popup__tab:hover {
+    background-color: #ecf0f2;
+}
+
+.popup__description-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.popup__description-info-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.popup__description-info-header {
+    font-size: 26px;
+    color: #564d4d;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.popup__booking {
+    background-color: #7e4863;
+    font-family: 'ubuntu', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    padding: 11px 27px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.popup__booking:hover {
+    background-color: #4A999D;
+}
+
+.popup__price {
+    background-color: transparent;
+    background-image: url(../img/bg_price.png);
+    background-size: 100% 100%;
+    font-size: 18px;
+    color: #7e4363;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.popup__fund-text {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(86, 77, 77);
+    line-height: 1.75;
+    margin-bottom: 30px;
+}
+
+.popup__fund__container {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.popup__fund__container::-webkit-scrollbar {
+    width: 0;
+}
+
+.popup__terms {
+    color: #564d4d;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    height: 40px;
+    padding-left: 50px;
+    line-height: 40px;
+}
+
+.squere {
+    background-color: transparent;
+    background-image: url(../img/square.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.kondicioner {
+    background-color: transparent;
+    background-image: url(../img/air-conditioner.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.wi_fi {
+    background-color: transparent;
+    background-image: url(../img/shower.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.fridge {
+    background-color: transparent;
+    background-image: url(../img/fridge.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.dryer {
+    background-color: transparent;
+    background-image: url(../img/hairdryer.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.slippers {
+    background-color: transparent;
+    background-image: url(../img/slippers.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.tv {
+    background-color: transparent;
+    background-image: url(../img/monitor.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.wash {
+    background-color: transparent;
+    background-image: url(../img/router.png);
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+.popup__terms-elements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 25px;
+}
+
+.popup__terms-header {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 18px;
+    color: rgba(86, 77, 77, 0.6);
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 20px;
 }
 
 @media(max-width: 1400px) {

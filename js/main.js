@@ -23,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
+    //Слайдер модалка
+    const fund = new Swiper('.fund-swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
     //Галерея загрузить еще
     let photoMore = document.getElementById('photo-more');
     photoMore.addEventListener('click', function () {
@@ -215,6 +227,44 @@ document.addEventListener('DOMContentLoaded', function () {
     if (popups.length > 0) popups.forEach(item => { popupsObj[item.id] = new Popup(item) })
 
 
+    //Контент модалки категории номеров отеля
+    let catalog = {
+        luxe: {
+            name: 'Luxe',
+            price: 'от 8880 ₽/ночь',
+            description: `Уникальные номера, исполненные в классическом стиле и индивидуальной цветовой гамме и планировке, вам предстоит нелегкий выбор, но каждый номер придется по вкусу. Сегодня рекомендуем обратить на номер "Пион" класса Люкс с двумя балконами, полноценной ванной комнатой с беде. Интерьер выполнен в оттенках цветущего пиона.`,
+            term: '35 м <sup>2</sup>',
+            src: ['./img/catalog_fund/luxe/luxe1.png', './img/catalog_fund/luxe/luxe2.png', './img/catalog_fund/luxe/luxe3.png'],
+        },
+        juniorSuite: {
+            name: 'Junior Suite',
+            price: 'от 5890 ₽/ночь',
+            description: `С трудом можно отнести номера к категории Полу Люкс, так как они не уступают люксовым номерам в комфорте, уюте и сервисе. Номера оснащены с учетом всех современных тенденций.`,
+            term: '25 м <sup>2</sup>',
+            src: ['./img/catalog_fund/junior-suite/juniorSuite1.jpg', './img/catalog_fund/junior-suite/juniorSuite2.jpg', './img/catalog_fund/junior-suite/juniorSuite3.jpg'],
+        },
+        luxeFamily: {
+            name: 'Luxe Family',
+            price: 'от 7900 ₽/ночь',
+            description: `Двухкомнатный номер класса люкс с большой двуспальной кроватью, диваном кроватью. Балкон и вид на реку и журавлевские скалы.`,
+            term: '35 м <sup>2</sup>',
+            src: ['./img/catalog_fund/luxe-family/luxeFamily1.jpg', './img/catalog_fund/luxe/luxeFamily2.jpg', './img/catalog_fund/luxe/luxeFamily3.jpg'],
+        },
+        comfort: {
+            name: 'Comfort',
+            price: 'от 3480 ₽/ночь',
+            description: `Стандартный номер с раздельными полутороспальными кроватями или одной большой двуспальной кроватью. Каждый номер выполнен в индивидуальной цветовой гамме. Есть номер категории доступная среда. Есть номера с видом на внутренний двор и номера с видом на реку Томь.`,
+            term: '18 м <sup>2</sup>',
+            src: ['./img/catalog_fund/comfort/comfort1.jpg', './img/catalog_fund/comfort/comfort2.jpg', './img/catalog_fund/comfort/comfort3.jpg'],
+        },
+        juniorSuiteFamily: {
+            name: 'Junior Suite Family',
+            price: 'от 5490 ₽/ночь',
+            description: `Однокомнатный номер класса полулюкс с большой двуспальной кроватью, креслом кроватью. Вид на реку и ресторан.`,
+            term: '25 м <sup>2</sup>',
+            src: ['./img/catalog_fund/junior-suite-family/junior-suite-family1.jpg', './img/catalog_fund/junior-suite-family/junior-suite-family2.jpg', './img/catalog_fund/junior-suite-family/junior-suite-family3.jpg'],
+        },
+    }
 
 
     //Анимация 

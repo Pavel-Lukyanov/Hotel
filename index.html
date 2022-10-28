@@ -987,7 +987,8 @@
                         <input data-rule="number" id="count" type="number" name="count">
                     </label>
                     <div class="popup__agree">
-                        <input data-rule="checkbox" class="popup__agree__input" required name="genre" id="agree" type="checkbox">
+                        <input data-rule="checkbox" class="popup__agree__input" required name="genre" id="agree"
+                            type="checkbox">
                         <span class="form__agree__span"></span>
                         <label class="form__agree__label" for="agree">
                             Согласие на обработку персональных данных
@@ -1017,16 +1018,137 @@
             </div>
         </div>
     </div>
-    <div id="fundModal" class="popup popup_opened">
-        <div class="popup__container">
-            <div class="popup__content">
+    <div id="fundModal" class="popup popup__fund popup_opened">
+        <div class="popup__container popup__fund__container">
+            <div class="popup__content popup__fund-container">
                 <div class="fund__category">
-                    <h2>
+                    <h3 class="popup__fund-header">
                         Категории номеров отеля «Villa Maralis»
-                    </h2>
+                    </h3>
+                    <div class="popup__funds">
+                        <button class="popup__tab" id="tabLuxe">
+                            <img class="popup__catalog-img" src="./img/catalog_fund/luxe.jpg" alt="Номер Luxe">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Luxe
+                                </h3>
+                                <p class="popup__price-btn">
+                                    от 8880 ₽/ночь
+                                </p>
+                            </div>
+                        </button>
+                        <button class="popup__tab" id="tabJuniorsuite">
+                            <img class="popup__catalog-img" src="./img/catalog_fund/junior_suite.jpg"
+                                alt="Номер Junior suite">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Junior suite
+                                </h3>
+                                <p class="popup__price-btn">
+                                    от 5890 ₽/ночь
+                                </p>
+                            </div>
+                        </button>
+                        <button class="popup__tab" id="tabLuxeFamily">
+                            <img class="popup__catalog-img" src="./img/catalog_fund/luxe_family.jpg"
+                                alt="Номер Luxe Family">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Luxe Family
+                                </h3>
+                                <p class="popup__price-btn">
+                                    от 7900 ₽/ночь
+                                </p>
+                            </div>
+                        </button>
+                        <button class="popup__tab" id="tabComfort">
+                            <img class="popup__catalog-img" src="./img/catalog_fund/comfort.jpg" alt="Номер Comfort">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Comfort
+                                </h3>
+                                <p class="popup__price-btn">
+                                    от 3480 ₽/ночь
+                                </p>
+                            </div>
+                        </button>
+                        <button class="popup__tab" id="tabJuniorSuiteFamily">
+                            <img class="popup__catalog-img" src="./img/catalog_fund/junior_suite_family.jpg"
+                                alt="Номер Junior Suite Family">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Junior Suite Family
+                                </h3>
+                                <p class="popup__price-btn">
+                                    от 5490 ₽/ночь
+                                </p>
+                            </div>
+                        </button>
+                    </div>
                 </div>
-                <div class="fund__info">
-                    
+                <div class="popup__description-container">
+                    <div class="fund-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="fund__swiper-img" src="./img/catalog_fund/DSC07321-670x370.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="popup__info-detail">
+                        <div class="popup__description-info">
+                            <h3 class="popup__description-info-header">
+                                Luxe
+                            </h3>
+                            <div class="popup__description-info-container">
+                                <div class="popup__price">
+                                    От 7900 ночь
+                                </div>
+                                <a class="popup__booking" href="#">
+                                    Забронировать
+                                </a>
+                            </div>
+                        </div>
+                        <p class="popup__fund-text">
+                            Уникальные номера, исполненные в классическом стиле и индивидуальной цветовой гамме и
+                            планировке, вам предстоит нелегкий выбор, но каждый номер придется по вкусу. Сегодня
+                            рекомендуем
+                            обратить на номер "Пион" класса Люкс с двумя балконами, полноценной ванной комнатой с беде.
+                            Интерьер выполнен в оттенках цветущего пиона.
+                        </p>
+                        <div class="popup__terms-container">
+                            <div class="popup__terms-header">
+                                Условия проживания
+                            </div>
+                            <ul class="popup__terms-elements">
+                                <li class="popup__terms squere">
+                                    35 м<sup>2</sup>
+                                </li>
+                                <li class="popup__terms kondicioner">
+                                    Кондиционер
+                                </li>
+                                <li class="popup__terms wi_fi">
+                                    Wi-Fi
+                                </li>
+                                <li class="popup__terms wash">
+                                    Душ
+                                </li>
+                                <li class="popup__terms fridge">
+                                    Холодильник
+                                </li>
+                                <li class="popup__terms dryer">
+                                    Фен
+                                </li>
+                                <li class="popup__terms slippers">
+                                    Тапочки
+                                </li>
+                                <li class="popup__terms tv">
+                                    Телевидение
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
@@ -1035,7 +1157,7 @@
                 </button>
             </div>
         </div>
-    </div> 
+    </div>
 </body>
 
 </html>
