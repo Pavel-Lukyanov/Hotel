@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //Слайдер модалка
-    const fund = new Swiper('.fund-swiper', {
+    /* function fundSwiperInit() { */
+    /* const fund = new Swiper('.fund-swiper', {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
@@ -33,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-    });
+    }); */
+    /* } */
 
     //Галерея загрузить еще
     let photoMore = document.getElementById('photo-more');
@@ -240,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
             fundModal.classList.add('popup_opened');
             tabsPopups.forEach(btn => {
                 btn.classList.remove('active');
-                if(btn.dataset.funds == this.dataset.target) {
+                if (btn.dataset.funds == this.dataset.target) {
                     btn.classList.add('active');
                 }
             })
@@ -314,13 +316,29 @@ document.addEventListener('DOMContentLoaded', function () {
         swiperFund.innerHTML = '';
         fundBook.href = catalog[fund].link;
 
+
+        if (fundSwiper) {
+            fundSwiper.destroy();
+        }
+
         for (let i = 0; i < catalog[fund].src.length; i++) {
             let slide = document.createElement('div');
             slide.classList.add('swiper-slide');
             slide.innerHTML = `<img class="fund__swiper-img" src="${catalog[fund].src[i]}" alt="Фото номера">`;
             swiperFund.append(slide);
         }
+
+        const fundSwiper = new Swiper('.fund-swiper', {
+            direction: 'horizontal',
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
     }
+
+
 
     //Объект с контентом модалки каталога номеров
     let catalog = {

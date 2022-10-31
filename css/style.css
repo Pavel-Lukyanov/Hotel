@@ -1606,6 +1606,14 @@ body {
     left: 63px;
 }
 
+.fund-swiper-button-next {
+    bottom: 20px;
+}
+
+.fund-swiper-button-prev {
+    bottom: 20px;
+}
+
 /* Попапы */
 
 .popup {
