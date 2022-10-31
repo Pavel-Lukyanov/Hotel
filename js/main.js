@@ -228,40 +228,143 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //Контент модалки категории номеров отеля
+    let swiperFund = document.getElementById('swiperFund'); //Слайдер модалка
+    let tabsPopups = document.querySelectorAll('.popup__tab');  //Кнопки табов
+    let fundModal = document.getElementById('fundModal');
+
+    //Открытие модалки и клик по нужному номеру
+    let cardFunds = document.querySelectorAll('.fund__item');
+    cardFunds.forEach(el => {
+        el.addEventListener('click', function (event) {
+            event.preventDefault();
+            fundModal.classList.add('popup_opened');
+            tabsPopups.forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.dataset.funds == this.dataset.target) {
+                    btn.classList.add('active');
+                }
+            })
+            let fund = el.dataset.target;
+            switch (fund) {
+                case 'luxe':
+                    catalogContent('luxe');
+                    break;
+                case 'juniorSuite':
+                    catalogContent('juniorSuite');
+                    break;
+                case 'luxeFamily':
+                    catalogContent('luxeFamily');
+                    break;
+                case 'comfort':
+                    catalogContent('comfort');
+                    break;
+                case 'juniorSuiteFamily':
+                    catalogContent('juniorSuiteFamily');
+                    break;
+            }
+        })
+    })
+
+
+    //Пробегаем по всем кнопкам
+    tabsPopups.forEach(el => {
+        el.addEventListener('click', function () {
+            //Удаляем активный класс (серый фон) у кнопки
+            tabsPopups.forEach(el => {
+                el.classList.remove('active');
+            })
+
+            //Добавляем активный класс(серый фон) нажатой кнопке
+            this.classList.add('active');
+
+            //Определяем по как кнопке был клик и вызываем функции отрисовки контента
+            let fund = el.dataset.funds;
+            switch (fund) {
+                case 'luxe':
+                    catalogContent('luxe');
+                    break;
+                case 'juniorSuite':
+                    catalogContent('juniorSuite');
+                    break;
+                case 'luxeFamily':
+                    catalogContent('luxeFamily');
+                    break;
+                case 'comfort':
+                    catalogContent('comfort');
+                    break;
+                case 'juniorSuiteFamily':
+                    catalogContent('juniorSuiteFamily');
+                    break;
+            }
+        })
+    })
+
+    //Получаем кнопку по которой был клик и из объекта рисуем контент
+    function catalogContent(fund) {
+        let nameFund = document.getElementById('nameFund');
+        let priceFund = document.getElementById('priceFund');
+        let textFund = document.getElementById('textFund');
+        let termsFund = document.getElementById('termsFund');
+
+        termsFund.innerHTML = catalog[fund].term;
+        textFund.textContent = catalog[fund].description;
+        nameFund.textContent = catalog[fund].name;
+        priceFund.textContent = catalog[fund].price;
+        swiperFund.innerHTML = '';
+
+        for (let i = 0; i < catalog[fund].src.length; i++) {
+            let slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
+            slide.innerHTML = `<img class="fund__swiper-img" src="${catalog[fund].src[i]}" alt="Фото номера">`;
+            swiperFund.append(slide);
+        }
+    }
+
+    //Объект с контентом модалки каталога номеров
     let catalog = {
         luxe: {
             name: 'Luxe',
             price: 'от 8880 ₽/ночь',
             description: `Уникальные номера, исполненные в классическом стиле и индивидуальной цветовой гамме и планировке, вам предстоит нелегкий выбор, но каждый номер придется по вкусу. Сегодня рекомендуем обратить на номер "Пион" класса Люкс с двумя балконами, полноценной ванной комнатой с беде. Интерьер выполнен в оттенках цветущего пиона.`,
-            term: '35 м <sup>2</sup>',
-            src: ['./img/catalog_fund/luxe/luxe1.png', './img/catalog_fund/luxe/luxe2.png', './img/catalog_fund/luxe/luxe3.png'],
+            term: `<li class="popup__terms squere">35 м <sup>2</sup></li ><li class="popup__terms kondicioner">Кондиционер</li><li class="popup__terms wi_fi">Wi-Fi</li><li class="popup__terms wash">Душ</li>
+            <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
+            <li class="popup__terms tv">Телевидение</li>`,
+            src: ['./img/catalog_fund/luxe/luxe1.jpg', './img/catalog_fund/luxe/luxe2.jpg', './img/catalog_fund/luxe/luxe3.jpg'],
         },
         juniorSuite: {
             name: 'Junior Suite',
             price: 'от 5890 ₽/ночь',
             description: `С трудом можно отнести номера к категории Полу Люкс, так как они не уступают люксовым номерам в комфорте, уюте и сервисе. Номера оснащены с учетом всех современных тенденций.`,
-            term: '25 м <sup>2</sup>',
+            term: `<li class="popup__terms squere">25 м <sup>2</sup></li ><li class="popup__terms kondicioner">Кондиционер</li><li class="popup__terms wi_fi">Wi-Fi</li><li class="popup__terms wash">Душ</li>
+            <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
+            <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/junior-suite/juniorSuite1.jpg', './img/catalog_fund/junior-suite/juniorSuite2.jpg', './img/catalog_fund/junior-suite/juniorSuite3.jpg'],
         },
         luxeFamily: {
             name: 'Luxe Family',
             price: 'от 7900 ₽/ночь',
             description: `Двухкомнатный номер класса люкс с большой двуспальной кроватью, диваном кроватью. Балкон и вид на реку и журавлевские скалы.`,
-            term: '35 м <sup>2</sup>',
-            src: ['./img/catalog_fund/luxe-family/luxeFamily1.jpg', './img/catalog_fund/luxe/luxeFamily2.jpg', './img/catalog_fund/luxe/luxeFamily3.jpg'],
+            term: `<li class="popup__terms squere">35 м <sup>2</sup></li ><li class="popup__terms kondicioner">Кондиционер</li><li class="popup__terms wi_fi">Wi-Fi</li><li class="popup__terms wash">Душ</li>
+            <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
+            <li class="popup__terms tv">Телевидение</li>`,
+            src: ['./img/catalog_fund/luxe-family/luxeFamily1.jpg', './img/catalog_fund/luxe-family/luxeFamily2.jpg', './img/catalog_fund/luxe-family/luxeFamily3.jpg'],
         },
         comfort: {
             name: 'Comfort',
             price: 'от 3480 ₽/ночь',
             description: `Стандартный номер с раздельными полутороспальными кроватями или одной большой двуспальной кроватью. Каждый номер выполнен в индивидуальной цветовой гамме. Есть номер категории доступная среда. Есть номера с видом на внутренний двор и номера с видом на реку Томь.`,
-            term: '18 м <sup>2</sup>',
+            term: `<li class="popup__terms squere">18 м <sup>2</sup></li ><li class="popup__terms kondicioner">Кондиционер</li><li class="popup__terms wi_fi">Wi-Fi</li><li class="popup__terms wash">Душ</li>
+            <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
+            <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/comfort/comfort1.jpg', './img/catalog_fund/comfort/comfort2.jpg', './img/catalog_fund/comfort/comfort3.jpg'],
         },
         juniorSuiteFamily: {
             name: 'Junior Suite Family',
             price: 'от 5490 ₽/ночь',
             description: `Однокомнатный номер класса полулюкс с большой двуспальной кроватью, креслом кроватью. Вид на реку и ресторан.`,
-            term: '25 м <sup>2</sup>',
+            term: `<li class="popup__terms squere">25 м <sup>2</sup></li ><li class="popup__terms kondicioner">Кондиционер</li><li class="popup__terms wi_fi">Wi-Fi</li><li class="popup__terms wash">Душ</li>
+            <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
+            <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/junior-suite-family/junior-suite-family1.jpg', './img/catalog_fund/junior-suite-family/junior-suite-family2.jpg', './img/catalog_fund/junior-suite-family/junior-suite-family3.jpg'],
         },
     }
