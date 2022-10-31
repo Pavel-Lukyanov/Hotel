@@ -23,20 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-    //Слайдер модалка
-    /* function fundSwiperInit() { */
-    /* const fund = new Swiper('.fund-swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    }); */
-    /* } */
-
     //Галерея загрузить еще
     let photoMore = document.getElementById('photo-more');
     photoMore.addEventListener('click', function () {
@@ -267,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     })
 
-
     //Пробегаем по всем кнопкам
     tabsPopups.forEach(el => {
         el.addEventListener('click', function () {
@@ -302,7 +287,12 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     //Получаем кнопку по которой был клик и из объекта рисуем контент
+    let fundSwiper;
     function catalogContent(fund) {
+
+        if (fundSwiper) {
+            fundSwiper.destroy()
+        }
         let nameFund = document.getElementById('nameFund');
         let priceFund = document.getElementById('priceFund');
         let textFund = document.getElementById('textFund');
@@ -316,11 +306,6 @@ document.addEventListener('DOMContentLoaded', function () {
         swiperFund.innerHTML = '';
         fundBook.href = catalog[fund].link;
 
-
-        if (fundSwiper) {
-            fundSwiper.destroy();
-        }
-
         for (let i = 0; i < catalog[fund].src.length; i++) {
             let slide = document.createElement('div');
             slide.classList.add('swiper-slide');
@@ -328,17 +313,18 @@ document.addEventListener('DOMContentLoaded', function () {
             swiperFund.append(slide);
         }
 
-        const fundSwiper = new Swiper('.fund-swiper', {
+        fundSwiper = new Swiper('.fund-swiper', {
+            // Optional parameters
             direction: 'horizontal',
+
             loop: true,
+            // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
         });
     }
-
-
 
     //Объект с контентом модалки каталога номеров
     let catalog = {
@@ -395,17 +381,118 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    //Анимация 
-    /* window.addEventListener('scroll', function () {
-        gsap.from(".hero__title", { opacity: 0, y: 500, ease: "power3.out", duration: 1 });
-        gsap.from(".hero__descr", { delay: 0.8, opacity: 0, ease: "power3.out", duration: 1 });
-        gsap.from(".photos-wrap__one", { scale: 0.5, delay: 1.3, opacity: 0, ease: "power3.out", duration: 1 });
-        gsap.from(".photos-wrap__two", { scale: 0.5, delay: 1.6, opacity: 0, ease: "power3.out", duration: 1 });
-        gsap.from(".photos-wrap__three", { scale: 0.5, delay: 1.9, opacity: 0, ease: "power3.out", duration: 1 });
-        gsap.from(".photos__author", { delay: 2.2, opacity: 0, ease: "power3.out", duration: 2 });
-    }); */
 
 
+
+
+
+
+
+
+
+    //Контент модалки категории номеров отеля
+    let swiperHall = document.getElementById('swiperHall'); //Слайдер модалка
+    let hallModal = document.getElementById('hallModal');
+
+    //Открытие модалки и клик по нужному hally
+    let cardHall = document.querySelectorAll('.halls__hall');
+    cardHall.forEach(el => {
+        el.addEventListener('click', function () {
+            hallModal.classList.add('popup_opened');
+            tabsPopups.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.hall == this.dataset.target) {
+                    btn.classList.add('active');
+                }
+            })
+            let fund = el.dataset.target;
+            switch (fund) {
+                case 'hall':
+                    hallsContent('hall');
+                    break;
+                case 'restaurant':
+                    hallsContent('restaurant');
+                    break;
+            }
+        })
+    })
+
+    //Пробегаем по всем кнопкам
+    tabsPopups.forEach(el => {
+        el.addEventListener('click', function () {
+            //Удаляем активный класс (серый фон) у кнопки
+            tabsPopups.forEach(el => {
+                el.classList.remove('active');
+            })
+
+            //Добавляем активный класс(серый фон) нажатой кнопке
+            this.classList.add('active');
+
+            //Определяем по какой кнопке был клик и вызываем функции отрисовки контента
+            let fund = el.dataset.hall;
+            switch (fund) {
+                case 'hall':
+                    hallsContent('hall');
+                    break;
+                case 'restaurant':
+                    hallsContent('restaurant');
+                    break;
+            }
+        })
+    })
+
+    //Получаем кнопку по которой был клик и из объекта рисуем контент
+    let hallSwiper;
+    function hallsContent(fund) {
+
+        if (hallSwiper) {
+            hallSwiper.destroy()
+        }
+        let nameHall = document.getElementById('nameHall');
+        let textHall = document.getElementById('hallText');
+        let termsHall = document.getElementById('termsHall');
+
+        termsHall.innerHTML = halls[fund].term;
+        textHall.innerHTML = halls[fund].description;
+        nameHall.textContent = halls[fund].name;
+        swiperHall.innerHTML = '';
+
+        for (let i = 0; i < halls[fund].src.length; i++) {
+            let slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
+            slide.innerHTML = `<img class="fund__swiper-img" src="${halls[fund].src[i]}" alt="Фото номера">`;
+            swiperHall.append(slide);
+        }
+
+        hallSwiper = new Swiper('.hall-swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+
+            loop: true,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+
+
+    //Объект с контентом модалки развлечения
+    let halls = {
+        hall: {
+            name: 'Конференц-залы',
+            description: `<p>Собственные конференц-залы на базе ресторанного комплекса Лазурный берег от 30 до 240 персон.</p><p>Команда высоко квалифицированных специалистов-организаторов деловых мероприятий.</p><p>Полное обеспечение необходимым оборудованием, сопровождение организационных процессов.</p><p>Кофе брейки и обеспечение питанием всех участников мероприятия.</p>`,
+            term: `<li class="popup__terms squere">35-600 кв.м</li ><li class="popup__terms people">30-240 чел.</li>`,
+            src: ['./img/hall/hall/hall1.jpg', './img/hall/hall/hall2.jpg', './img/hall/hall/hall3.jpg'],
+        },
+        restaurant: {
+            name: 'Ресторан Лазурный Берег',
+            description: `<p>Мы сами разрабатываем рецептуры многих наших блюд, а все до единого салата, кроме классических, уникальны и не имеют аналогов. С большим трепетом мы относимся к приготовлению любых блюд, для поддержки высочайшего качества которых у нас есть все необходимое и даже больше: своя коптильная, где мы готовим вкуснейшие мясные и рыбные блюда; настоящий тандыр, не только для мяса, но и для настоящих армянских лепешек.</p>`,
+            term: `<li class="popup__terms squere">2000 м <sup>2</sup></li ><li class="popup__terms people">1000 чел.</li>`,
+            src: ['./img/hall/restaurant/rest1.jpg', './img/hall/restaurant/rest2.jpg', './img/hall/restaurant/rest3.jpg'],
+        },
+    }
 
 
 });

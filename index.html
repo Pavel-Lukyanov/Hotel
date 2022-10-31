@@ -17,7 +17,6 @@
     <script defer src="./js/main.js"></script>
     <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>"
         type="text/javascript"></script>
-    <!--  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script> -->
 </head>
 
 <body>
@@ -287,8 +286,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev about-swiper-button-prev"></div>
+                        <div class="swiper-button-next about-swiper-button-next"></div>
                     </div>
                 </div>
             </div>
@@ -492,7 +491,7 @@
                     высоко квалифицированных специалистов-организаторов деловых мероприятий.
                 </p>
                 <div class="halls__cards-container">
-                    <div class="halls__hall conference-rooms">
+                    <div data-target="hall" class="halls__hall conference-rooms">
                         <div class="halls__hall__content">
                             <h3 class="halls__cards-header">
                                 Конференц-залы
@@ -506,7 +505,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="halls__hall hall-restaurant">
+                    <div data-target="restaurant" class="halls__hall hall-restaurant">
                         <div class="halls__hall__content">
                             <h3 class="halls__cards-header">
                                 Ресторан Лазурный Берег
@@ -762,7 +761,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img" src="./img/stocks.png" alt="Скидка 5%">
+                <img class="popup__img-stock" src="./img/stocks.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -794,7 +793,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img" src="./img/birthday.png" alt="Скидка 5%">
+                <img class="popup__img-stock" src="./img/birthday.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -854,7 +853,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img" src="./img/wedding.png" alt="Скидка 5%">
+                <img class="popup__img-stock" src="./img/wedding.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -892,7 +891,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img" src="./img/bussines.png" alt="Скидка 5%">
+                <img class="popup__img-stock" src="./img/bussines.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -919,7 +918,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img" src="./img/all-their.png" alt="Скидка 5%">
+                <img class="popup__img-stock" src="./img/all-their.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -1089,6 +1088,7 @@
                 <div class="popup__description-container">
                     <div class="fund-swiper">
                         <div class="swiper-wrapper" id="swiperFund">
+
                         </div>
                         <div class="swiper-button-prev fund-swiper-button-prev"></div>
                         <div class="swiper-button-next fund-swiper-button-next"></div>
@@ -1113,6 +1113,67 @@
                             </div>
                             <ul class="popup__terms-elements" id="termsFund">
                             </ul>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="popup__close" title="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
+                        <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="hallModal" class="popup popup__fund">
+        <div class="popup__container popup__fund__container">
+            <div class="popup__content popup__fund-container">
+                <div class="fund__category">
+                    <h3 class="popup__fund-header">
+                        На территории отеля «Villa Maralis»
+                    </h3>
+                    <div class="popup__funds">
+                        <button data-hall="hall" class="popup__tab">
+                            <img class="popup__catalog-img" src="./img/halls.png" alt="Номер Luxe">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Конференц-залы
+                                </h3>
+                                <p class="popup__price-btn">
+                                    Круглосуточно
+                                </p>
+                            </div>
+                        </button>
+                        <button data-hall="restaurant" class="popup__tab">
+                            <img class="popup__catalog-img" src="./img/hall-restaraun-modal.jpg"
+                                alt="Номер Junior suite">
+                            <div class="popup__name-container">
+                                <h3 class="popup__fund-name">
+                                    Ресторан Лазурный берег
+                                </h3>
+                                <p class="popup__price-btn">
+                                    11:00 - 00:00
+                                </p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="popup__description-container">
+                    <div class="hall-swiper">
+                        <div class="swiper-wrapper" id="swiperHall">
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                    <div class="popup__info-detail">
+                        <div class="popup__description-info">
+                            <h3 id="nameHall" class="popup__description-info-header">
+                            </h3>
+                        </div>
+                        <div class="popup__terms-container">
+                            <ul class="popup__terms-elements" id="termsHall">
+                            </ul>
+                            <div id="hallText" class="popup__text">
+                            </div>
                         </div>
                     </div>
                 </div>
