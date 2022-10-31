@@ -340,11 +340,13 @@ body {
     transform: translateY(-100%);
     padding-left: 30px;
     padding-right: 30px;
+    opacity: 0;
 }
 
 .header__menu-visible__container.active {
     visibility: visible;
     transform: translateY(0);
+    opacity: 1;
 }
 
 .header__menu-visible {
@@ -2304,6 +2306,38 @@ body {
 .hall-swiper  {
     overflow-x: hidden;
     position: relative;
+}
+
+.menu__container__fix {
+    position: absolute;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+    top: 80px;
+    left: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 9999;
+    width: 156px;
+}
+
+.menu__container__fix.menu-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu__container__fix ul li {
+    margin-bottom: 20px;
+}
+
+.menu__container__fix ul li a {
+    padding: 6px 9px 18px;
+    font-size: 17px;
+    color: rgb(86, 77, 77);
+    line-height: 1.591;
+    font-family: "ubuntu", sans-serif;
+    font-weight: 600;
 }
 
 @media(max-width: 1400px) {
