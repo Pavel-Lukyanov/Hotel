@@ -539,8 +539,11 @@ body {
 .about__flex {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-width: 1140px;
     margin: auto;
     gap: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .about__text {
@@ -1511,10 +1514,6 @@ body {
     margin-bottom: 16px;
 }
 
-.about-swiper {
-    overflow-x: hidden;
-}
-
 .about__info {
     max-width: 465px;
     margin-inline-start: auto;
@@ -1532,10 +1531,11 @@ body {
 }
 
 .about-swiper {
+    overflow: hidden;
     height: 100%;
     width: 100%;
     object-fit: cover;
-    height: 378px;
+    height: 425px;
 }
 
 .about-swiper-button-prev {
@@ -1546,11 +1546,10 @@ body {
     bottom: 3px;
 }
 
-@media(min-width: 1320px) {
-    .about-swiper {
-        object-fit: cover;
-        max-height: 450px;
-    }
+.about__img-swiper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about__swiper-container {
@@ -2326,7 +2325,7 @@ body {
     width: 156px;
 }
 
-.menu__container__fix.menu-show {
+.menu__container__fix.menu-show.menu-fix {
     visibility: visible;
     opacity: 1;
 }
@@ -2428,6 +2427,8 @@ body {
     .about__flex {
         display: block;
         max-width: 1140px;
+        padding-right: 15px;
+        padding-left: 15px;
     }
 
     .about__info {
@@ -2636,6 +2637,18 @@ body {
 }
 
 @media(max-width: 500px) {
+
+    .about__img-swiper {
+        object-fit: contain;
+    }
+
+    .about__img-swiper {
+        height: fit-content;
+    }
+
+    .about-swiper {
+        height: auto;
+    }
 
     .fund__category {
         padding-top: 60px;

@@ -60,13 +60,30 @@ document.addEventListener('DOMContentLoaded', function () {
         let scrollPage = window.pageYOffset;
         if (scrollPage > headerHeight.clientHeight && !fixedHeader.classList.contains('active')) {
             fixedHeader.classList.add('active');
-            menuContainerFix.style.visibility = 'visible';
+            menuFix.classList.add('menu-fix');
         } else if (scrollPage < headerHeight.clientHeight && fixedHeader.classList.contains('active')) {
             fixedHeader.classList.remove('active');
-            menuContainerFix.style.visibility = 'hidden';
+            menuFix.classList.remove('menu-fix');
         }
     })
 
+    //Бургер меню
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menuContainer');
+    const btnFix = document.getElementById('menuBtnFix');
+    const menuFix = document.getElementById('menuContainerFix');
+
+    btn.addEventListener('click', showMenu);
+    btnFix.addEventListener('click', showMenu);
+
+    function showMenu() {
+        menu.classList.toggle('menu-show');
+        btn.classList.toggle('opened');
+        btnFix.classList.toggle('opened');
+        menuFix.classList.toggle('menu-show');
+    }
+
+    
 
     //Больше акций
     let moreStock = document.getElementById('more-stock');
@@ -133,27 +150,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
     })
-
-
-    //Бургер меню
-    const btn = document.getElementById('menuBtn');
-    const menu = document.getElementById('menuContainer');
-    const btnFix = document.getElementById('menuBtnFix');
-    const menuFix = document.getElementById('menuContainerFix');
-
-    btn.addEventListener('click', showMenu);
-    btnFix.addEventListener('click', showMenu);
-
-    function showMenu() {
-        menu.classList.toggle('menu-show');
-        btn.classList.toggle('opened');
-        btnFix.classList.toggle('opened');
-        menuFix.classList.toggle('menu-show');
-    }
-
-    
-
-
 
     //Фото галерея
     let photos = document.querySelectorAll('.photogalery__card');
