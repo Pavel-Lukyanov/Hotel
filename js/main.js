@@ -60,8 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let scrollPage = window.pageYOffset;
         if (scrollPage > headerHeight.clientHeight && !fixedHeader.classList.contains('active')) {
             fixedHeader.classList.add('active');
+            menuContainerFix.style.visibility = 'visible';
         } else if (scrollPage < headerHeight.clientHeight && fixedHeader.classList.contains('active')) {
             fixedHeader.classList.remove('active');
+            menuContainerFix.style.visibility = 'hidden';
         }
     })
 

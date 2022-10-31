@@ -334,19 +334,22 @@ body {
     background: #f9f7f0;
     padding-top: 18px;
     padding-bottom: 14px;
-    z-index: 10;
     box-shadow: 0 0 5px rgb(0 0 0 / 20%);
     transition: 0.3s;
     transform: translateY(-100%);
     padding-left: 30px;
     padding-right: 30px;
     opacity: 0;
+    user-select: none;
+    z-index: 0;
 }
 
 .header__menu-visible__container.active {
     visibility: visible;
     transform: translateY(0);
     opacity: 1;
+    user-select: all;
+    z-index: 10;
 }
 
 .header__menu-visible {
@@ -2303,7 +2306,7 @@ body {
     min-width: 0;
 }
 
-.hall-swiper  {
+.hall-swiper {
     overflow-x: hidden;
     position: relative;
 }
