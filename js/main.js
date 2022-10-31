@@ -305,12 +305,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let priceFund = document.getElementById('priceFund');
         let textFund = document.getElementById('textFund');
         let termsFund = document.getElementById('termsFund');
+        let fundBook = document.getElementById('fundBook');
 
         termsFund.innerHTML = catalog[fund].term;
         textFund.textContent = catalog[fund].description;
         nameFund.textContent = catalog[fund].name;
         priceFund.textContent = catalog[fund].price;
         swiperFund.innerHTML = '';
+        fundBook.href = catalog[fund].link;
 
         for (let i = 0; i < catalog[fund].src.length; i++) {
             let slide = document.createElement('div');
@@ -330,6 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
             <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/luxe/luxe1.jpg', './img/catalog_fund/luxe/luxe2.jpg', './img/catalog_fund/luxe/luxe3.jpg'],
+            link: 'link',
         },
         juniorSuite: {
             name: 'Junior Suite',
@@ -339,6 +342,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
             <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/junior-suite/juniorSuite1.jpg', './img/catalog_fund/junior-suite/juniorSuite2.jpg', './img/catalog_fund/junior-suite/juniorSuite3.jpg'],
+            link: 'link',
         },
         luxeFamily: {
             name: 'Luxe Family',
@@ -348,6 +352,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
             <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/luxe-family/luxeFamily1.jpg', './img/catalog_fund/luxe-family/luxeFamily2.jpg', './img/catalog_fund/luxe-family/luxeFamily3.jpg'],
+            link: 'link',
         },
         comfort: {
             name: 'Comfort',
@@ -357,6 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
             <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/comfort/comfort1.jpg', './img/catalog_fund/comfort/comfort2.jpg', './img/catalog_fund/comfort/comfort3.jpg'],
+            link: 'link',
         },
         juniorSuiteFamily: {
             name: 'Junior Suite Family',
@@ -366,6 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li class="popup__terms fridge">Холодильник</li><li class="popup__terms dryer">Фен</li><li class="popup__terms slippers">Тапочки</li>
             <li class="popup__terms tv">Телевидение</li>`,
             src: ['./img/catalog_fund/junior-suite-family/junior-suite-family1.jpg', './img/catalog_fund/junior-suite-family/junior-suite-family2.jpg', './img/catalog_fund/junior-suite-family/junior-suite-family3.jpg'],
+            link: 'link',
         },
     }
 
