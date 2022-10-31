@@ -372,6 +372,7 @@ body {
 
 .menu-btn {
     display: none;
+    user-select: none;
 }
 
 .header__book__link {
