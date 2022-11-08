@@ -1289,6 +1289,7 @@ body {
     gap: 13px;
     cursor: pointer;
     white-space: nowrap;
+    width: fit-content;
 }
 
 .airport::before {
