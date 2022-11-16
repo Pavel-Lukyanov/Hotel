@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    //Инициализация ленивой загрузки
+    lazyload();
+
     //Главный слайдер
     const hero = new Swiper('.hero-swiper', {
         // Optional parameters

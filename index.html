@@ -9,11 +9,13 @@
     <meta name="description" content="Отель">
     <meta name="keywords" content="Отель, номера, номерной фонд, завтра в отеле">
     <title>Отель Вилла МАРАЛИС</title>
+    <link rel="preload" href="./fonts/fa-brands-400.woff2" as="font">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/icon.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./img/favicon.png" type="image/x-icon">
+    <script defer src="./libs/lazyload.js"></script>
     <script defer src="./libs/swiper-bundle.min.js"></script>
     <script defer src="./libs/inputmask.min.js"></script>
     <script defer src="./js/main.js"></script>
@@ -59,7 +61,7 @@
                         <span class="bar-mid"></span>
                         <span class="bar-bot"></span>
                     </button>
-                    <img class="header__img" src="./img/logo.svg" alt="Логотип">
+                    <img class="header__img lazyload" data-src="./img/logo.svg" alt="Логотип">
                     <div id="menuContainer" class="menu__container">
                         <nav class="menu__nav">
                             <ul>
@@ -225,23 +227,23 @@
             <div class="container">
                 <div class="stock__container">
                     <div class="stock__item stock-right">
-                        <img class="stock__img" src="./img/stocks.png" alt="Скидка 5% при регистрации на сайте">
+                        <img class="stock__img lazyload" data-src="./img/stocks.png" alt="Скидка 5% при регистрации на сайте">
                         <button data-pointer="stock1" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-bottom">
-                        <img class="stock__img" src="./img/birthday.png" alt="Скидка 30% С днем рождения">
+                        <img class="stock__img lazyload" data-src="./img/birthday.png" alt="Скидка 30% С днем рождения">
                         <button data-pointer="stock2" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-bottom">
-                        <img class="stock__img" src="./img/wedding.png" alt="Тариф свадебный">
+                        <img class="stock__img lazyload" data-src="./img/wedding.png" alt="Тариф свадебный">
                         <button data-pointer="stock3" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-right">
-                        <img class="stock__img" src="./img/bussines.png" alt="Тариф бизнес">
+                        <img class="stock__img lazyload" data-src="./img/bussines.png" alt="Тариф бизнес">
                         <button data-pointer="stock4" class="stock__more">Подробнее</button>
                     </div>
                     <div class="stock__item stock-bottom stock__infvisible">
-                        <img class="stock__img" src="./img/all-their.png" alt="Тариф все свои">
+                        <img class="stock__img lazyload" data-src="./img/all-their.png" alt="Тариф все свои">
                         <button data-pointer="stock5" class="stock__more">Подробнее</button>
                     </div>
                 </div>
@@ -274,16 +276,16 @@
                             <div class="about-swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide swiper-about">
-                                        <img class="about__img-swiper" src="./img/about1.jpg" alt="Фото отеля">
+                                        <img class="about__img-swiper lazyload" data-src="./img/about1.jpg" alt="Фото отеля">
                                     </div>
                                     <div class="swiper-slide swiper-about">
-                                        <img class="about__img-swiper" src="./img/about2.jpg" alt="Фото отеля">
+                                        <img class="about__img-swiper lazyload" data-src="./img/about2.jpg" alt="Фото отеля">
                                     </div>
                                     <div class="swiper-slide swiper-about">
-                                        <img class="about__img-swiper" src="./img/about3.jpg" alt="Фото отеля">
+                                        <img class="about__img-swiper lazyload" data-src="./img/about3.jpg" alt="Фото отеля">
                                     </div>
                                     <div class="swiper-slide swiper-about">
-                                        <img class="about__img-swiper" src="./img/about4.jpg" alt="Фото отеля">
+                                        <img class="about__img-swiper lazyload" data-src="./img/about4.jpg" alt="Фото отеля">
                                     </div>
                                 </div>
                             </div>
@@ -420,7 +422,7 @@
                     </div>
                 </div>
                 <div class="breakfast__img-container">
-                    <img class="breakfast__img" src="./img/breakfast.png" alt="Завтрак в отеле">
+                    <img class="breakfast__img lazyload" data-src="./img/breakfast.png" alt="Завтрак в отеле">
                 </div>
             </div>
         </section>
@@ -435,41 +437,41 @@
                 </p>
                 <div class="photogalery__cards-container">
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./img/gallery/10.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/10.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./img/gallery/29.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/29.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./img/gallery/30.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/30.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./img/gallery/404_1.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/404_1.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./img/gallery/comfort.png" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/comfort.png" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card">
-                        <img class="photogalery__img" src="./img/gallery/DSC07307.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/DSC07307.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./img/gallery/DSC07309.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/DSC07309.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./img/gallery/DSC07313-1.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/DSC07313-1.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./img/gallery/DSC07313-2.jpg" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/DSC07313-2.jpg" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./img/gallery/junior-suite-family.png"
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/junior-suite-family.png"
                             alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./img/gallery/junior-suite.png" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/junior-suite.png" alt="Фотография отеля">
                     </div>
                     <div class="photogalery__card photogalery__invisible">
-                        <img class="photogalery__img" src="./img/gallery/luxe-family.png" alt="Фотография отеля">
+                        <img class="photogalery__img lazyload" data-src="./img/gallery/luxe-family.png" alt="Фотография отеля">
                     </div>
                 </div>
                 <button id="photo-more" class="photogalery__more">
@@ -763,7 +765,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img-stock" src="./img/stocks.png" alt="Скидка 5%">
+                <img class="popup__img-stock lazyload" data-src="./img/stocks.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -795,7 +797,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img-stock" src="./img/birthday.png" alt="Скидка 5%">
+                <img class="popup__img-stock lazyload" data-src="./img/birthday.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -855,7 +857,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img-stock" src="./img/wedding.png" alt="Скидка 5%">
+                <img class="popup__img-stock lazyload" data-src="./img/wedding.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -893,7 +895,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img-stock" src="./img/bussines.png" alt="Скидка 5%">
+                <img class="popup__img-stock lazyload" data-src="./img/bussines.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -920,7 +922,7 @@
                         Забронировать
                     </a>
                 </div>
-                <img class="popup__img-stock" src="./img/all-their.png" alt="Скидка 5%">
+                <img class="popup__img-stock lazyload" data-src="./img/all-their.png" alt="Скидка 5%">
                 <button type="button" class="popup__close" title="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 24 24">
                         <path d="M13 12l5-5-1-1-5 5-5-5-1 1 5 5-5 5 1 1 5-5 5 5 1-1z"></path>
@@ -1028,7 +1030,7 @@
                     </h3>
                     <div class="popup__funds">
                         <button data-funds="luxe" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/catalog_fund/luxe.jpg" alt="Номер Luxe">
+                            <img class="popup__catalog-img lazyload" data-src="./img/catalog_fund/luxe.jpg" alt="Номер Luxe">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
                                     Luxe
@@ -1039,7 +1041,7 @@
                             </div>
                         </button>
                         <button data-funds="juniorSuite" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/catalog_fund/junior_suite.jpg"
+                            <img class="popup__catalog-img lazyload" data-src="./img/catalog_fund/junior_suite.jpg"
                                 alt="Номер Junior suite">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
@@ -1051,7 +1053,7 @@
                             </div>
                         </button>
                         <button data-funds="luxeFamily" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/catalog_fund/luxe_family.jpg"
+                            <img class="popup__catalog-img lazyload" data-src="./img/catalog_fund/luxe_family.jpg"
                                 alt="Номер Luxe Family">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
@@ -1063,7 +1065,7 @@
                             </div>
                         </button>
                         <button data-funds="comfort" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/catalog_fund/comfort.jpg" alt="Номер Comfort">
+                            <img class="popup__catalog-img lazyload" data-src="./img/catalog_fund/comfort.jpg" alt="Номер Comfort">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
                                     Comfort
@@ -1074,7 +1076,7 @@
                             </div>
                         </button>
                         <button data-funds="juniorSuiteFamily" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/catalog_fund/junior_suite_family.jpg"
+                            <img class="popup__catalog-img lazyload" data-src="./img/catalog_fund/junior_suite_family.jpg"
                                 alt="Номер Junior Suite Family">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
@@ -1135,7 +1137,7 @@
                     </h3>
                     <div class="popup__funds">
                         <button data-hall="hall" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/halls.png" alt="Номер Luxe">
+                            <img class="popup__catalog-img lazyload" data-src="./img/halls.png" alt="Номер Luxe">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
                                     Конференц-залы
@@ -1146,7 +1148,7 @@
                             </div>
                         </button>
                         <button data-hall="restaurant" class="popup__tab">
-                            <img class="popup__catalog-img" src="./img/hall-restaraun-modal.jpg"
+                            <img class="popup__catalog-img lazyload" data-src="./img/hall-restaraun-modal.jpg"
                                 alt="Номер Junior suite">
                             <div class="popup__name-container">
                                 <h3 class="popup__fund-name">
